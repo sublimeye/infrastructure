@@ -1,0 +1,43 @@
+<project name="php" default="analyzer:run">
+    <property name="dir.build" value="${project.basedir}/build"/>
+    <property name="dir.docs" value="${dir.build}/docs"/>
+    <property name="dir.docs.phpdoc" value="${dir.docs}/phpdoc"/>
+    <property name="dir.docs.docblox" value="${dir.docs}/docblox"/>
+    <property name="dir.docs.codebrowser" value="${dir.build}/code-browser"/>
+
+    <property name="dir.reports" value="${dir.build}/logs"/>
+    <property name="dir.reports.pdepend" value="${dir.build}/pdepend"/>
+    <property name="dir.reports.coverage" value="${dir.reports}/coverage"/>
+    <property name="dir.reports.clover" value="${dir.reports}"/>
+
+    <target name="analyzer:run"
+            depends="analyzer:clean, analyzer:prepare, analyzer:lint"
+            description="Run all test and build everything"/>
+
+    <!--  Cleanup before build  -->
+    <target name="analyzer:clean" description="Clean up build directories.">
+        <echo msg="Cleaning build directories ..."/>
+        <delete dir="${dir.build}" verbose="true"/>
+    </target>
+
+    <!--  Prepare for build  -->
+    <target name="analyzer:prepare" description="Create build directories.">
+        <echo msg="Creating build directories ..."/>
+        <echo msg="Creating build directories ..."/>
+        <mkdir dir="${dir.build}"/>
+        <mkdir dir="${dir.docs}"/>
+        <mkdir dir="${dir.docs.phpdoc}"/>
+        <mkdir dir="${dir.docs.docblox}"/>
+        <mkdir dir="${dir.docs.codebrowser}"/>
+        <mkdir dir="${dir.reports}"/>
+        <mkdir dir="${dir.reports.coverage}"/>
+        <mkdir dir="${dir.reports.clover}"/>
+        <mkdir dir="${dir.reports.pdepend}"/>
+    </target>
+
+    <!-- PHP lint -->
+    <target name="analyzer:lint" description="Checks coding standard.">
+        <echo msg="Checking code syntaxis ..."/>        
+    </target>
+
+</project>

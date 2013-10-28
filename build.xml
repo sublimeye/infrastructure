@@ -6,9 +6,10 @@
  
     <!--  Project configuration  -->
     <import file="build.project.xml"/>
+    <import file="build.analyzer.xml"/>
  
     <!--  Main targets -->
-    <target name="build:testing" depends="build:clean, build:basic:composer, build:basic:project, deploy:testing" description="Run all test and build everything on TEST server"/>
+    <target name="build:testing" depends="build:clean, analyzer:run" description="Run all test and build everything on TEST server"/>
     <target name="build:stage"   depends="build:clean, build:basic:composer, build:basic:project, deploy:stage"   description="Run all test and build everything on Stage server"/>
     <target name="build:release" depends="build:clean, build:basic:composer, build:basic:project, deploy:release" description="Run all test and build everything on RELEASE server"/>
  

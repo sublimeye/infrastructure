@@ -1,0 +1,4 @@
+infrastructure
+==============
+
+Base project infrastructure

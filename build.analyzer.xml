@@ -6,7 +6,7 @@
     <property name="dir.reports.clover" value="${dir.reports}"/>
 
     <target name="analyzer:run"
-            depends="analyzer:clean, analyzer:prepare, analyzer:jshint, analyzer:csslint"
+            depends="analyzer:clean, analyzer:prepare, analyzer:jshint, analyzer:csslint, analyzer:jscheckstyle"
             description="Run all test and build everything"/>
 
     <!--  Cleanup before build  -->
@@ -33,8 +33,8 @@
     </target>
 
     <!-- Javascript jshint -->
-    <target name="analyzer:jshint" description="Checks javascript coding standard.">
-        <echo msg="Checking javascript coding standard ..."/>
+    <target name="analyzer:jscheckstyle" description="Checks javascript coding standard - checkstyle format.">
+        <echo msg="Checking javascript coding standard, checkstyle format ..."/>
         <exec passthru="true" command="jshint ${dir.src} --checkstyle-reporter &gt; ${dir.reports}/jscheckstyle.xml"/>
     </target>
 

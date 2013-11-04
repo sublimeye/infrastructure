@@ -26,15 +26,13 @@ module.exports = function (grunt) {
 			files: ['test/**/*.html']
 		},
 		jshint: {
-			files: ['Gruntfile.js', 'src/js/**/*.js'],
+			files: ['src/js/libs/*.js'],
 			options: {
-				globals: {
-					jQuery: true,
-					console: true,
-					module: true,
-					document: true
-				}
-			}
+				force: 'true',
+				jshintrc: 'build_config/.jshintrc',
+				reporter: 'checkstyle',
+				reporterOutput: 'logs/check-jshint.xml',
+			},
 		},
 		watch: {
 			files: ['<%= sources %>'],

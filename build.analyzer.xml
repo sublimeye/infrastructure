@@ -33,6 +33,12 @@
     </target>
 
     <!-- Javascript jshint -->
+    <target name="analyzer:jshint" description="Checks javascript coding standard.">
+        <echo msg="Checking javascript coding standard ..."/>
+        <exec passthru="true" command="jshint ${dir.src} --checkstyle-reporter &gt; ${dir.reports}/jscheckstyle.xml"/>
+    </target>
+
+    <!-- Javascript jshint -->
     <target name="analyzer:csslint" description="CSS Lint">
         <echo msg="Running CSS Lint"/>
         <exec passthru="true" command="csslint --format=lint-xml ${dir.src} &gt; ${dir.reports}/csslint.xml"/>

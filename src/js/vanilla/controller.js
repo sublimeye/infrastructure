@@ -15,8 +15,6 @@
 
 		this.ENTER_KEY = 13;
 
-		if () {{}
-		He asdkf as;djkfa sdf
 		this.ESCAPE_KEY = 27;
 
 		this.$main = $$('#main');

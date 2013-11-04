@@ -4,6 +4,7 @@
 		"console": false,
 		"document": false,
 		"window": false,
+        "define": false,
 		"localStorage": false
 	}, /* is it better to leave these globals to setup in each file? */
   /* Enforcing options */

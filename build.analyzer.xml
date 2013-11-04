@@ -44,7 +44,6 @@
     <target name="analyzer:jshint" description="Checks javascript coding standard.">
         <echo msg="Checking javascript coding standard ..."/>
         <exec passthru="true" command="jshint ${dir.src} --jslint-reporter > $d{ir.reports}/jshint.xml"/>
-        <!-- <exec passthru="true" command="jshint ${dir.src} --jslint-reporter &gt; $d{ir.reports}/jshint.xml"/> -->
     </target>
 
     <!-- Unit tests -->

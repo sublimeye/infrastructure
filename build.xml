@@ -23,7 +23,7 @@
     </target>
 
     <!--  General deploy  -->
-    <target name="deploy:basic" depends="deploy:basic:tar, deploy:basic:check, deploy:basic:scp, deploy:basic:run, deploy:basic:project" description="General deployment. Deploy config should be set before use"></target>
+    <!-- <target name="deploy:basic" depends="deploy:basic:tar, deploy:basic:check, deploy:basic:scp, deploy:basic:run, deploy:basic:project" description="General deployment. Deploy config should be set before use"></target> -->
 
     <!-- Run composer -->
     <target name="build:basic:composer" depends="build:basic:composer:download, build:basic:composer:install" description="Run project composer..." />

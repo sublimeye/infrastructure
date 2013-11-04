@@ -1,0 +1,41 @@
+<project name="php" default="analyzer:run">
+    <property name="dir.build" value="${project.basedir}/build"/>
+    <property name="dir.reports" value="${dir.build}/logs"/>
+    <property name="dir.reports.pdepend" value="${dir.build}/pdepend"/>
+    <property name="dir.reports.coverage" value="${dir.reports}/coverage"/>
+    <property name="dir.reports.clover" value="${dir.reports}"/>
+
+    <target name="analyzer:run"
+            depends="analyzer:clean, analyzer:prepare, analyzer:jshint, analyzer:csslint"
+            description="Run all test and build everything"/>
+
+    <!--  Cleanup before build  -->
+    <target name="analyzer:clean" description="Clean up build directories.">
+        <echo msg="Cleaning build directories ..."/>
+        <delete dir="${dir.build}" verbose="true"/>
+    </target>
+
+    <!--  Prepare for build  -->
+    <target name="analyzer:prepare" description="Create build directories.">
+        <echo msg="Creating build directories ..."/>
+        <echo msg="Creating build directories ..."/>
+        <mkdir dir="${dir.build}"/>
+        <mkdir dir="${dir.reports}"/>
+        <mkdir dir="${dir.reports.coverage}"/>
+        <mkdir dir="${dir.reports.clover}"/>
+        <mkdir dir="${dir.reports.pdepend}"/>
+    </target>
+
+    <!-- Javascript jshint -->
+    <target name="analyzer:jshint" description="Checks javascript coding standard.">
+        <echo msg="Checking javascript coding standard ..."/>
+        <exec passthru="true" command="jshint ${dir.src} --jslint-reporter &gt; ${dir.reports}/jshint.xml"/>
+    </target>
+
+    <!-- Javascript jshint -->
+    <target name="analyzer:csslint" description="CSS Lint">
+        <echo msg="Running CSS Lint"/>
+        <exec passthru="true" command="csslint --format=lint-xml ${dir.src} &gt; ${dir.reports}/csslint.xml"/>
+    </target>
+
+</project>

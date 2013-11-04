@@ -1,0 +1,2883 @@
+<inspections profile="Default">
+  <group name="Internationalization issues">
+    <inspection shortName="LossyEncoding" displayName="Lossy encoding">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection warns you of characters that the current document encoding is incapable to represent.&lt;br&gt;
+
+  For example, when you are&lt;br&gt;
+  &lt;ul&gt;
+    &lt;li&gt;typing international characters in a document configured to &lt;b&gt;US-ASCII&lt;/b&gt; charset. Some characters will be lost on save.&lt;/li&gt;
+    &lt;li&gt;or loading &lt;b&gt;UTF-8&lt;/b&gt;-encoded file using &lt;b&gt;ISO-8859-1&lt;/b&gt; one-byte charset. Some characters will be displayed incorrectly.&lt;/li&gt;
+  &lt;/ul&gt;
+
+  You fix this by changing the file encoding,
+  either by specifying the encoding directly in the file, e.g. by editing &lt;b&gt;encoding=&lt;/b&gt; attribute in the XML prolog of XML file,
+  or configuring the &lt;b&gt;Settings|Project Settings|File Encodings&lt;/b&gt;.
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Control Flow">
+    <inspection shortName="PhpWrongCatchClausesOrderInspection" displayName="Wrong catch clauses order">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Used when catch clauses are not in the correct order (from the more specific to the more generic) or one exception class is caught twice.&lt;br/&gt;
+  If you don&apos;t fix the order, some exceptions may not be catched by the most specific handler.
+  &lt;br/&gt;&lt;br/&gt;
+  &lt;a href=&quot;http://www.php.net/manual/en/language.exceptions.php&quot;&gt;http://www.php.net/manual/en/language.exceptions.php&lt;/a&gt;
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpUnreachableStatementInspection" displayName="Unreachable statement">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Statement can not be normally reached.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Naming conventions">
+    <inspection shortName="FunctionNamingConventionJS" displayName="Function naming convention">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports instances of JavaScript functions whose names are either too short, too
+                long, or do not follow
+                the specified regular expression pattern.
+                &lt;p&gt;
+                    Use the fields provided below to specify mininum length, maximum length and regular expression
+                    expected for local variables names.
+                    (Regular expressions are in standard &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;java.util.regex&lt;/font&gt;&lt;/b&gt; format.)
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="LocalVariableNamingConventionJS" displayName="Local variable naming convention">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports instances of JavaScript local variables whose names are either too short, too
+                long, or do not follow
+                the specified regular expression pattern.
+                &lt;p&gt;
+                    Use the fields provided below to specify mininum length, maximum length and regular expression
+                    expected for local variables names.
+                    (Regular expressions are in standard &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;java.util.regex&lt;/font&gt;&lt;/b&gt; format.)
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ParameterNamingConventionJS" displayName="Function parameter naming convention">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports instances of JavaScript function parameters whose names are either too short,
+                too long, or do not follow the specified regular expression pattern.
+                &lt;p&gt;
+                    Use the fields provided below to specify mininum length, maximum length and regular expression
+                    expected for local variables names.
+                    (Regular expressions are in standard &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;java.util.regex&lt;/font&gt;&lt;/b&gt; format.)
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Ini Files">
+    <inspection shortName="DuplicateKeyInSection" displayName="Duplicate Directive In Section">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif;&quot;&gt;
+This inspection checks equal properties in same section.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="DuplicateSectionInFile" displayName="Duplicate Section In File">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif;&quot;&gt;
+This inspection checks equal section names in same ini file.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Code style issues">
+    <inspection shortName="JSUndefinedPropertyAssignment" displayName="Undefined property assignment">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection reports assignments to undefined properties of explicitly type-annotated variables.&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="NonBlockStatementBodyJS" displayName="Non-block statement body">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports instances of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;while&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt;,
+                and &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;with&lt;/font&gt;&lt;/b&gt; statements whose bodies are not block statements.  While
+                such statements are legal JavaScript, it is usually safer for downstream maintenance to use
+                the code blocks for statement bodies.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ChainedFunctionCallJS" displayName="Chained function call">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any JavaScript function calls whose target is another function call.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="UnterminatedStatementJS" displayName="Unterminated statement">&lt;html&gt;
+&lt;body&gt;
+
+              This inspection reports JavaScript statements which are not terminated by a semicolon. While line-breaks may be used instead of semicolons to terminate JavaScript statements, some coding styles prefer the semicolon for consistency with the other languages.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSDeclarationsAtScopeStart" displayName="Variable declarations are at the scope start">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks that all local variables declarations are at beginning of the current function.&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="ConstantOnLHSOfComparisonJS" displayName="Constant on left side of comparison">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports on comparison operations with constant values on their left-hand side. Some
+                coding conventions
+                specify that constants should be on the right-hand side of comparisons.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="NestedFunctionCallJS" displayName="Nested function call">&lt;html&gt;
+&lt;body&gt;
+
+              This inspection reports any JavaScript function calls used as arguments to another function call.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ChainedEqualityJS" displayName="Chained equality">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of chained equality comparisons (i.e. &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;
+                a==b==c&lt;/font&gt;&lt;/b&gt;) in JavaScript code.  Such comparisons are confusing.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ConstantOnRHSOfComparisonJS" displayName="Constant on right side of comparison">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports on comparison operations with constant values on their right-hand side. Some
+                coding conventions
+                specify that constants should be on the left-hand side of comparisons.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Phing">
+    <inspection shortName="PhingDomInspection" displayName="Phing inspection">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;This inspection validates resource references inside Phing build files.&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="ActionScript specific">
+    <inspection shortName="JSFieldCanBeLocal" displayName="Field can be local">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  This inspection searches for redundant class fields that can be replaced with local variables.
+  If all local usages of a field are preceded by assignments to that field,
+  the field can be removed and its usages replaced with local variables.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Unused">
+    <inspection shortName="PhpUnusedLocalVariableInspection" displayName="Unused local variable">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  A variable is considered &lt;i&gt;unused&lt;/i&gt; in the following cases:
+  &lt;ul&gt;
+    &lt;li&gt;The value of the variable is not used anywhere or is overwritten immediately.&lt;/li&gt;
+    &lt;li&gt;The reference stored in the variable is not used anywhere or is overwritten immediately.&lt;/li&gt;
+  &lt;/ul&gt;
+  The inspection is disabled for &lt;a href=&quot;http://php.net/manual/en/language.namespaces.global.php&quot;&gt;global space&lt;/a&gt; by default.
+  To change the behaviour check the option &quot;Enable inspection in global space&quot;.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUnusedAliasInspection" displayName="Unused import">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Usage of statement use was not found
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpUnusedParameterInspection" displayName="Unused parameter">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  A parameter is considered &lt;i&gt;unused&lt;/i&gt; in the following cases:
+  &lt;ul&gt;
+    &lt;li&gt;Parameter is passed by value and the value is not used anywhere or is overwritten immediately.&lt;/li&gt;
+    &lt;li&gt;Parameter is passed by reference and the reference is not used anywhere or is overwritten immediately.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpUnusedPrivateMethodInspection" displayName="Unused private method">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Direct usages of the private method are not found.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUnusedPrivateFieldInspection" displayName="Unused private field">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Direct usages of the private field are not found.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="SASS/SCSS">
+    <inspection shortName="SassScssUnresolvedPlaceholderSelector" displayName="Unresolved placeholder selector">&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection warns about sass/scss placeholder selector references which can&apos;t be resolved to any valid target.
+&lt;/font&gt;</inspection>
+    <inspection shortName="SassScssUnresolvedVariable" displayName="Unresolved variable">&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection warns about sass/scss variable references which can&apos;t be resolved to any valid target.
+&lt;/font&gt;</inspection>
+    <inspection shortName="SassScssUnresolvedMixin" displayName="Unresolved mixin">&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection warns about sass/scss mixins references which can&apos;t be resolved to any valid target.
+&lt;/font&gt;</inspection>
+    <inspection shortName="SassScssResolvedByNameOnly" displayName="Resolved by name only">&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection warns about less elements that are not imported explicitly and resolved through all project less-files only by name.
+  You have no guaranties that these elements will be resolved at the production.
+&lt;/font&gt;
+</inspection>
+    <inspection shortName="SassScssUnresolvedFunction" displayName="Unresolved function">&lt;html&gt;
+&lt;body&gt;
+This inspection warns about sass/scss functions references which can&apos;t be resolved to any valid target.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Portability issues">
+    <inspection shortName="InconsistentLineSeparators" displayName="Inconsistent line separators">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection detects files with line separators different from the project default.
+  E.g. you set the line separator to &quot;\n&quot; in the Settings|Code Style|Line separator,
+  and the file you are editing uses &apos;\r\n&apos; as a line separator.
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Code Smell">
+    <inspection shortName="PhpUsageOfSilenceOperatorInspection" displayName="Usage of silence operator">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  This inspection reports usages of silence operator (@).
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpInconsistentReturnPointsInspection" displayName="Inconsistent return points">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+The inspection is intended to point at the following types of inconsistencies:
+  &lt;ul&gt;
+    &lt;li&gt;The function/method contains return statements with arguments as well as without them&lt;/li&gt;
+    &lt;li&gt;The function/method may happen to return a value or end it&apos;s execution without a return statement at all&lt;/li&gt;
+    &lt;li&gt;The function/method is declared void but contains return statements with arguments&lt;/li&gt;
+  &lt;/ul&gt;
+  Technically these are not errors but practically usually indicate programmer’s mistakes.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="General">
+    <inspection shortName="XmlHighlighting" displayName="XML highlighting">&lt;html&gt;
+&lt;body&gt;
+Highlights XML validation problems in the results of batch code inspection.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSLastCommaInArrayLiteral" displayName="Last comma in array literal">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript source code for last &lt;b&gt;comma&lt;/b&gt; in array literal.
+  Such array has different length among different browsers.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpDeprecationInspection" displayName="Deprecated">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Referenced entity is deprecated. This usually means that you are advised to remove the usage or replace it with other construct.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSPotentiallyInvalidUsageOfThis" displayName="Potentially invalid reference to &apos;this&apos; from closure">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks for JavaScript &lt;b&gt;this&lt;/b&gt; to be the same in closure and in outer context.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSUnresolvedLibraryURL" displayName="There is no locally stored library for the HTTP link.">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks that URL of an external JavaScript library is associated with
+  a locally stored file used for code completion and navigation.&lt;br&gt;
+  Use &apos;Download library&apos; quick fix (Alt+Enter) to solve the problem.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSUnusedGlobalSymbols" displayName="Unused JavaScript / ActionScript global symbol">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript / ActionScript public &lt;b&gt;functions&lt;/b&gt;, &lt;b&gt;variables&lt;/b&gt;, &lt;b&gt;classes&lt;/b&gt; and &lt;b&gt;properties&lt;/b&gt; are &lt;b&gt;used&lt;/b&gt; in global scope.
+  The validation works in JavaScript, Action Script, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSClosureCompilerSyntax" displayName="Closure compiler syntax">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks code for warnings implied by Google Closure Compiler annotations.
+  This includes correct usage of @interface and @implements tags.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSJQueryEfficiency" displayName="jQuery usage efficiency">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks that jQuery selectors are used in an efficient way.
+  It suggests to split descendant selectors which are prefaced with ID selector and warns about duplicated selectors which could be cached.&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSUnusedLocalSymbols" displayName="Unused JavaScript / ActionScript local symbol">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript / ActionScript &lt;b&gt;parameter&lt;/b&gt;, local &lt;b&gt;variable&lt;/b&gt;, &lt;b&gt;function&lt;/b&gt;, &lt;b&gt;classes&lt;/b&gt; and private member declarations to be &lt;b&gt;used&lt;/b&gt; in given file scope.
+  The validation works in JavaScript, Action Script, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSAccessibilityCheck" displayName="@private and @protected members accessibility">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks that JavaScript members marked with &lt;b&gt;@private&lt;/b&gt; and &lt;b&gt;@protected&lt;/b&gt; tags are visible in current context.&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpIncludeInspection" displayName="Unresolved include">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Include expression is not resolved
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="Annotator" displayName="Annotator">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Allows to see problems reported by language annotators in the results of batch code inspection.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSUnfilteredForInLoop" displayName="Unfiltered for..in loop">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks for using &lt;b&gt;unfiltered&lt;/b&gt; for-in loops in JavaScript, using this construction causes
+  processing inherited or unexpected properties, one needs to filter own properties with hasOwnProperty() method. The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSValidateTypes" displayName="Type mismatch problem">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript called function &lt;b&gt;parameters&lt;/b&gt;, &lt;b&gt;return values&lt;/b&gt;, &lt;b&gt;assigned expressions&lt;/b&gt; to be of correct type.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSDeprecatedSymbols" displayName="Deprecated JavaScript symbol">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks for using deprecated JavaScript &lt;b&gt;functions&lt;/b&gt; and &lt;b&gt;variables&lt;/b&gt;.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpHierarchyChecksInspection" displayName="Class hierarchy checks">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Class hierarchy checks: abstract methods implementation, implementing/overriding method is compatibility with super declaration.
+  &lt;br&gt;All violations result in PHP fatal errors. It&apos;s not recommended to disable or suppress this inspection.
+
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSCheckFunctionSignatures" displayName="Signature mismatch problem">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript called function &lt;b&gt;parameters&lt;/b&gt;, &lt;b&gt;return values&lt;/b&gt;, &lt;b&gt;assigned expressions&lt;/b&gt; to be of correct type.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SyntaxError" displayName="Syntax error">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Allows to see syntax errors in the results of batch code inspection.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSSuspiciousNameCombination" displayName="Suspicious name combination">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Reports assignments and function calls where the name of the variable to which
+  a value is assigned or the function parameter does not seem to match the name of the value assigned to it.
+  For example: &lt;br&gt;&lt;b&gt;&lt;span style=&quot;color:#000080&quot;&gt;var x = 0;&lt;br&gt;var y = x;&lt;/span&gt;&lt;/b&gt;&lt;br&gt;
+  or
+  &lt;br&gt;&lt;b&gt;&lt;span style=&quot;color:#000080&quot;&gt;var x = 0, y = 0;&lt;br&gt;var rc = new Rectangle(y, x, 20, 20);&lt;/span&gt;&lt;/b&gt;&lt;br&gt;
+  &lt;p&gt;The configuration pane allows to specify the names which should not be used together: the error is reported
+  if the parameter name or assignment target name contains words from one group and the name of the assigned or passed
+  variable contains words from a different group.&lt;/p&gt;
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSUnresolvedVariable" displayName="Unresolved JavaScript variable">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript referenced &lt;b&gt;variables&lt;/b&gt; and &lt;b&gt;fields&lt;/b&gt; to be valid ones.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSLastCommaInObjectLiteral" displayName="Last comma in object literal">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript source code for last &lt;b&gt;comma&lt;/b&gt; in object literal.
+  Such object could have problem in certain JavaScript engine implementations.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSValidateJSDoc" displayName="Validate JSDoc / ASDoc">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection validates references in JavaScript / ActionScript documentation comments (JSDoc / ASDoc).&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSPrimitiveTypeWrapperUsage" displayName="Primitive type object wrapper used">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks for improper usage of wrappers for JavaScript primitive types. Also, warning will be produced when property of primitive type is modified, as assigned value will be lost.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSCommentMatchesSignature" displayName="JSDoc comment matches function signature">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks that parameters defined within JSDoc comment match function&apos;s actual parameters, i.e. have the same names and quantity.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSMismatchedCollectionQueryUpdate" displayName="Mismatched query and update of collection">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  This inspection reports collection fields or variables whose contents are either queried and not updated,
+  or updated and not queried. Such mismatched queries and updates are pointless,
+  and may indicate either dead code or a typographical error.
+  &lt;br&gt;
+  &lt;br&gt;
+  Use the tables below to specify which methods are update and/or query methods.
+  The names are matched with the beginning of the method name.
+  Query methods which return their result are automatically detected,
+  only query methods which return their result in an argument need to be specified.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSPotentiallyInvalidTargetOfIndexedPropertyAccess" displayName="Possibly incorrect target of indexed property access">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection reports JavaScript potentially invalid &lt;b&gt;indexed property access&lt;/b&gt; such as Array[1].
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSUnresolvedFunction" displayName="Unresolved JavaScript function">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript called &lt;b&gt;functions&lt;/b&gt; to be valid ones.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSUnusedAssignment" displayName="Unused JavaScript / ActionScript assignment">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript / ActionScript for unused assignments.
+  The validation works in JavaScript, Action Script, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpAbstractStaticMethodInspection" displayName="Static function should not be abstract">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  PHP Strict Standards: Static function should not be abstract.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="InjectedReferences" displayName="Injected References">&lt;html&gt;
+&lt;body&gt;
+Checks references injected by IntelliLang plugin.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CoffeeScriptUnusedLocalSymbols" displayName="Unused local symbols">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks CoffeeScript &lt;b&gt;parameter&lt;/b&gt;, local &lt;b&gt;variable&lt;/b&gt;, &lt;b&gt;function&lt;/b&gt;, &lt;b&gt;classes&lt;/b&gt; and private member declarations to be &lt;b&gt;used&lt;/b&gt; in given file scope.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSValidateJSON" displayName="Validate JSON">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks that *.json files comply with JSON specification.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpLanguageLevelInspection" displayName="Language Level">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Checks that language features used in the source code correspond the selected language level.
+  (i.e. traits can be used only in PHP 5.4).
+  Desired language level is set in the project configuration (Project Settings | PHP).
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSUndeclaredVariable" displayName="Implicitly declared global JavaScript variable">
+&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript &lt;b&gt;variables&lt;/b&gt; to be declared explicitly with &lt;b&gt;var&lt;/b&gt; statement.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSPotentiallyInvalidConstructorUsage" displayName="Potentially invalid constructor usage">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection reports JavaScript potentially invalid &lt;b&gt;constructor function usages&lt;/b&gt; such as: using non constructor in new, using constructor&apos;s prototype, report
+  constructor call without new. Constructor function assumed to have upper case name (optional) or have explicit JSDoc @constructor tag.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpDynamicAsStaticMethodCallInspection" displayName="Dynamic method called as static">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Dynamic class method called as static.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSDuplicatedDeclaration" displayName="Duplicate JavaScript declaration">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript &lt;b&gt;declaration&lt;/b&gt; to be declared once in &lt;b&gt;current&lt;/b&gt; scope.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSReferencingMutableVariableFromClosure" displayName="Referencing mutable variable from closure">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks for accessing mutable JavaScript &lt;b&gt;variables&lt;/b&gt; in nested &lt;b&gt;functions&lt;/b&gt;.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSUnnecessarySemicolon" displayName="Unnecessary semicolon">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks JavaScript source code for unneeded &lt;b&gt;semicolons&lt;/b&gt;.
+  The validation works in JavaScript, html or jsp files.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Spelling">
+    <inspection shortName="SpellCheckingInspection" displayName="Typo">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  Spellchecker inspection helps locate typos and misspelling in your code, comments and literals, and fix them in one click.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="HTML">
+    <inspection shortName="QuirksModeInspectionTool" displayName="Quirks mode">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects incompatibility problems of common web-browsers and W3C html/css specs, etc.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlUnknownTag" displayName="Unknown HTML tag">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection highlights unknown HTML tags, and lets mark such tags as Custom to avoid highlighting them as unknown in future.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlExtraClosingTag" displayName="Extra closing tag for empty element">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection spots extra closing tag for the empty elements like IMG or BR.&lt;br&gt;
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlNonExistentInternetResource" displayName="Non-existent web resource">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+This inspection highlights links to non-existent web resources.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="RequiredAttributes" displayName="Missing required attribute">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection reports XML/HTML tags with missing mandatory attributes.
+  You can specify attribute names that should not be reported. 
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CheckEmptyScriptTag" displayName="Empty tag">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Reports empty tags (like &lt;b&gt;script&lt;/b&gt;) that do not work in some browsers.
+  The validation works in html or jsp file types.&lt;br&gt;
+&lt;/font&gt;
+
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlUnknownAnchorTarget" displayName="Anchor reference problems">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks unresolved anchor references in HTML.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CheckValidXmlInScriptTagBody" displayName="Malformed content of &lt;script&gt; tag">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks that the &lt;b&gt;script&lt;/b&gt; tag content is valid XML.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CheckImageSize" displayName="Image size mismatch">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection highlights &lt;b&gt;width&lt;/b&gt; and &lt;b&gt;height&lt;/b&gt; attribute values of &lt;b&gt;IMG&lt;/b&gt; tag
+  that are different from the width and height of the original image.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlUnknownTarget" displayName="File reference problems">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks unresolved file references in HTML.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlPresentationalElement" displayName="Presentational HTML tag">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection highlights pure presentational HTML tags and provides ability to replace them with CSS or with other tags.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlUnknownAttribute" displayName="Unknown HTML tag attribute">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection highlights unknown HTML tag attributes as invalid, and lets mark such attributes as Custom to avoid highlighting them as invalid.&lt;br&gt;
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlFormInputWithoutLabel" displayName="Form input without an associated label">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection highlights form elements without required associated label and provides ability to create a new label.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="HtmlDeprecatedTag" displayName="Deprecated HTML tag">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection highlights deprecated HTML tags and provides ability to replace them with CSS or with other tags for some of them.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="DOM issues">
+    <inspection shortName="PlatformDetectionJS" displayName="Platform detection">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports common JavaScript patterns for detecting
+                the browser or operating system in which script is being run.  In addition
+                to pointing out non-portable constructs, these platform detection patterns
+                are often incomplete and easily fooled.  For most cases, detection of individual
+                environment features is preferable to attempting to detect the entire platform.
+                Patterns detected include
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.all&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.layers&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;navigator.userAgent&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;navigator.oscpu&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;navigator.appName&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;navigator.appCodeName&lt;/font&gt;&lt;/b&gt;, and
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;navigator.platform&lt;/font&gt;&lt;/b&gt;
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="InnerHTMLJS" displayName="Use of &apos;innerHTML&apos; property">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports JavaScript accesses to DOM nodes as text using the
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;innerHTML&lt;/font&gt;&lt;/b&gt; property.
+                Most uses of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;innerHTML&lt;/font&gt;&lt;/b&gt; are better performed using explicit
+                DOM calls such as &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;getElementByID()&lt;/font&gt;&lt;/b&gt; and
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;createElement()&lt;/font&gt;&lt;/b&gt;.  Additionally,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;innerHTML&lt;/font&gt;&lt;/b&gt; will not work with XML
+                DOMs, including DOMs for XHTML if viewed as XML.  This can lead to difficult to
+                diagnose bugs.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="DocumentWriteJS" displayName="Call to &apos;document.write()&apos;">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports JavaScript method calls to
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.write()&lt;/font&gt;&lt;/b&gt; or
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.writeln()&lt;/font&gt;&lt;/b&gt;.
+                Most uses of these calls are better performed using explicit
+                DOM calls such as &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;getElementByID()&lt;/font&gt;&lt;/b&gt; and
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;createElement()&lt;/font&gt;&lt;/b&gt;.  Additionally,
+                the &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;write()&lt;/font&gt;&lt;/b&gt; and
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;writeln()&lt;/font&gt;&lt;/b&gt; calls will not work with XML
+                DOMs, including DOMs for XHTML if viewed as XML.  This can result in difficulty to point out bugs.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="XHTMLIncompatabilitiesJS" displayName="XHTML incompatibilities">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports common JavaScript DOM patterns which may present problems
+                with XHTML documents. In particular, the patterns detected will behave completely
+                differently depending on whether the document is loaded as XML or HTML.
+                This can result in subtle bugs where script behaviour is dependent on the MIME-type of the document, rather than its content.
+                Patterns detected include
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.body&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.images&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.applets&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.links&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.forms&lt;/font&gt;&lt;/b&gt;, and
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;document.anchors&lt;/font&gt;&lt;/b&gt;.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Error handling">
+    <inspection shortName="UnusedCatchParameterJS" displayName="Unused &apos;catch&apos; parameter">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;catch&lt;/font&gt;&lt;/b&gt; parameters that are unused in their
+corresponding blocks.  This inspection will not report any &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;catch&lt;/font&gt;&lt;/b&gt; parameters
+named &quot;ignore&quot; or &quot;ignored&quot;.
+&lt;p&gt;
+    Use the checkbox below to disable this inspection for &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;catch&lt;/font&gt;&lt;/b&gt;
+    blocks with comments.
+&lt;/p&gt; &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ContinueOrBreakFromFinallyBlockJS" displayName="&apos;continue&apos; or &apos;break&apos; inside &apos;finally&apos; block">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;break&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font
+                    color=&quot;#000080&quot;&gt;continue&lt;/font&gt;&lt;/b&gt; statements
+                inside of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;finally&lt;/font&gt;&lt;/b&gt;
+                blocks. While occasionally intended, such statements are very confusing, may mask exceptions thrown, and
+                tremendously complicate debugging.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="EmptyCatchBlockJS" displayName="Empty &apos;catch&apos; block">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any empty &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;catch&lt;/font&gt;&lt;/b&gt; blocks in Javascript content.
+                Empty &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;catch&lt;/font&gt;&lt;/b&gt;
+                blocks are a sign that errors are simply being ignored, rather than properly handled.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="EmptyTryBlockJS" displayName="Empty &apos;try&apos; block">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any empty &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;try&lt;/font&gt;&lt;/b&gt; blocks in Javascript content.
+                Empty &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;break&lt;/font&gt;&lt;/b&gt; are usually the result of a coding error.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ThrowFromFinallyBlockJS" displayName="&apos;throw&apos; inside &apos;finally&apos; block">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;throw&lt;/font&gt;&lt;/b&gt; statements inside of
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;finally&lt;/font&gt;&lt;/b&gt;
+                blocks. While occasionally intended, such &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;throw&lt;/font&gt;&lt;/b&gt; statements may mask
+                exceptions thrown, and
+                tremendously complicate debugging.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="EmptyFinallyBlockJS" displayName="Empty &apos;finally&apos; block">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any empty &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;finally&lt;/font&gt;&lt;/b&gt; blocks in Javascript content.
+                Empty &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;finally&lt;/font&gt;&lt;/b&gt; are usually the result of a coding error.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ReturnFromFinallyBlockJS" displayName="&apos;return&apos; inside &apos;finally&apos; block">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;return&lt;/font&gt;&lt;/b&gt; statements inside of
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;finally&lt;/font&gt;&lt;/b&gt;
+                blocks in JavaScript content. While occasionally intended, such &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;return&lt;/font&gt;&lt;/b&gt; statements may mask
+                exceptions thrown, and
+                tremendously complicate debugging.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ExceptionCaughtLocallyJS" displayName="Exception used for local control-flow">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;throw&lt;/font&gt;&lt;/b&gt; statements
+                whose exceptions are always
+                caught by containing &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;try&lt;/font&gt;&lt;/b&gt; statements. Using &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;
+                throw&lt;/font&gt;&lt;/b&gt;
+                statements as a &quot;goto&quot; to change the local flow of control is likely to be confusing.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Type compatibility">
+    <inspection shortName="PhpIllegalArrayKeyTypeInspection" displayName="Illegal array key type">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Arrays and objects can not be used as array keys.
+  &lt;br/&gt;&lt;br/&gt;
+  &lt;a href=&quot;http://www.php.net/manual/en/language.types.array.php&quot;&gt;http://www.php.net/manual/en/language.types.array.php&lt;/a&gt;
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpWrongForeachArgumentTypeInspection" displayName="Invalid argument supplied for foreach()">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  &quot;Foreach&quot; iteration is applicable to arrays and objects only.
+  &lt;br/&gt;&lt;br/&gt;
+  &lt;a href=&quot;http://www.php.net/manual/en/control-structures.foreach.php&quot;&gt;http://www.php.net/manual/en/control-structures.foreach.php&lt;/a&gt;
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpParamsInspection" displayName="Parameter type">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Invocation parameter types are not compatible with declared.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Bitwise operation issues">
+    <inspection shortName="IncompatibleMaskJS" displayName="Incompatible bitwise mask operation">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of JavaScript bitwise mask expressions which are guaranteed to
+evaluate to &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;true&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;false&lt;/font&gt;&lt;/b&gt; in JavaScript code.
+Expressions checked are of the form &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&lt;i&gt;(var &amp; constant1) == constant2&lt;/i&gt;&lt;/font&gt;&lt;/b&gt; or
+&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&lt;i&gt;(var | constant1) == constant2&lt;/i&gt;&lt;/font&gt;&lt;/b&gt;, where &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&lt;i&gt;constant1&lt;/i&gt;&lt;/font&gt;&lt;/b&gt;
+and &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&lt;i&gt;constant2&lt;/i&gt;&lt;/font&gt;&lt;/b&gt; are  incompatible bitmask constants.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PointlessBitwiseExpressionJS" displayName="Pointless bitwise expression">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of pointless bitwise
+expressions in JavaScript.  Such expressions include &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;and&lt;/font&gt;&lt;/b&gt;ing with zero, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;ori&lt;/font&gt;&lt;/b&gt;ng by zero,
+and shift by zero.  Such expressions may be the result of automated refactorings
+not completely followed through to completion, and in any case are unlikely to be what the developer
+intended to do.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSBitwiseOperatorUsage" displayName="Bitwise operator usage">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection reports suspicious usages of bitwise AND (&quot;&lt;b&gt;&amp;&lt;/b&gt;&quot;) and OR (&quot;&lt;b&gt;|&lt;/b&gt;&quot;) operators.&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="ShiftOutOfRangeJS" displayName="Shift operation by inappropriate constant">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of JavaScript shift operations
+where the value shifted by is constant and outside of the reasonable range.  Integer
+shift operations outside of the range &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;0..31&lt;/font&gt;&lt;/b&gt; are reported.  Shifting by negative or overly large values is almost certainly
+a coding error.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="File Watchers">
+    <inspection shortName="TaskProblemsInspection" displayName="File watcher problems">&lt;html&gt;
+&lt;body&gt;
+Highlights errors parsed with output filters from background task.
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="TaskInspection" displayName="File watcher available">&lt;html&gt;
+&lt;body&gt;
+Suggests predefined tasks.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="PHPDoc">
+    <inspection shortName="PhpDocMissingReturnTagInspection" displayName="Missing @return tag">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Function&apos;s or method&apos;s PHPDoc comment doesn&apos;t have a @return tag.&lt;br&gt;
+  &lt;b&gt;Note&lt;/b&gt;: the inspection reports only those cases where a function has an explicit return type (in &quot;return&quot; statement).
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpDocMissingThrowsInspection" displayName="Missing @throws tag(s)">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Checks that all exceptions thrown by function are properly documented in
+  it&apos;s PHPDoc with @throws tags.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpDocSignatureInspection" displayName="PHPDoc comment matches function/method signature">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  A number of parameters, their names or types (if any) in PHPDoc comment
+  do not match the ones in respective function or method declaration.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpMissingDocCommentInspection" displayName="Missing PHPDoc comment">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+A PHPDoc comment is missing for the current element.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Cucumber">
+    <inspection shortName="CucumberTableInspection" displayName="Unused or missing columns in Cucumber tables">&lt;html&gt;
+&lt;body&gt;
+Highlights tables in Examples sections of Cucumber .feature files with unused or missing columns.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CucumberMissedExamples" displayName="Missing examples section">&lt;html&gt;
+&lt;body&gt;
+    Highlights scenario outlines in Cucumber .feature files which do not have &apos;Examples&apos; section. &lt;br/&gt;
+    Use a quick-fix to automatically create the Examples section with a pre-filled table header.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CucumberUndefinedStep" displayName="Undefined step">&lt;html&gt;
+&lt;body&gt;
+Highlights steps in Cucumber .feature files which do not have a matching step definitions. &lt;br/&gt;
+Use a quick-fix to automatically create a new step definition.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CucumberExamplesColon" displayName="Missing &apos;:&apos; after examples keyword">&lt;html&gt;
+&lt;body&gt;
+Highlights examples sections in Cucumber .feature files which do not have &apos;:&apos; after the &lt;strong&gt;Examples&lt;/strong&gt; keyword.
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Potentially confusing code constructs">
+    <inspection shortName="BlockStatementJS" displayName="Unnecessary &apos;block&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports unnecessary block statements in JavaScript content.  Block statements
+                that are not used as the body of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;while&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;do&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;with&lt;/font&gt;&lt;/b&gt;,
+                or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;try&lt;/font&gt;&lt;/b&gt; statements, or as the
+                body of a function declaration are reported.  Since JavaScript blocks do not introduce new scopes
+                as is common in Java and other languages, free-standing block statements may be the result of
+                code confusion, and may result in subtle bugs.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="WithStatementJS" displayName="&apos;with&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;with&lt;/font&gt;&lt;/b&gt; statements
+                in Javascript content.  &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;with&lt;/font&gt;&lt;/b&gt;
+                statements result in potentially confusing implicit bindings, and may behave
+                strangely in setting new variables.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="NestedFunctionJS" displayName="Nested function">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports JavaScript functions nested inside other functions.
+                While JavaScript allows functions to be nested, such constructs may be confusing.
+                Additionally, nested functions are prone to cause difficult-to-diagnose memory
+                leaks in certain browsers, including Microsoft Internet Explorer.
+                &lt;p&gt;
+                    Use the checkbox below to prevent this inspection from reporting anonymous nested functions.
+                &lt;/p&gt;
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ConfusingPlusesOrMinusesJS" displayName="Confusing sequence of &apos;+&apos; or &apos;-&apos;">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any suspicions combinations of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;+&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;-&lt;/font&gt;&lt;/b&gt;
+                characters in JavaScript code (e.g. &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;a+++b&lt;/font&gt;&lt;/b&gt;.  While legal, such sequences are confusing,
+                and may have their semantics changed through changes in whitespace.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="NestedConditionalExpressionJS" displayName="Nested conditional expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports ternary conditional expressions contained within other ternary conditions.
+                Such nested conditionals may be extremely confusing, and best replaced by more explicit conditional
+                logic.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="OverlyComplexBooleanExpressionJS" displayName="Overly complex boolean expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript boolean expressions with too many terms. Such
+                expressions may be confusing and bug-prone.
+                &lt;p&gt;
+                    Use the field provided below to specify the maximum number of terms allowed in an arithmetic
+                    expression.&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="AnonymousFunctionJS" displayName="Anonymous function">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports anonymous JavaScript functions. While often very handy,
+                anonymous functions may be confusing, and are discouraged in some coding standards.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="DynamicallyGeneratedCodeJS" displayName="Execution of dynamically generated JavaScript">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports on any uses of the &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;eval&lt;/font&gt;&lt;/b&gt; ,&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;setTimeout&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;setInterval&lt;/font&gt;&lt;/b&gt; functions, or allocation of a &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;Function&lt;/font&gt;&lt;/b&gt;
+                object in JavaScript.  These functions are used to execute arbitrary strings of JavaScript text, often
+                dynamically generated.  This can be very confusing, and may be a security risk.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="NegatedConditionalExpressionJS" displayName="Negated conditional expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of conditional expressions in JavaScript content whose conditions
+                are negated.
+                Flipping the order of the conditional expression branches will usually increase the clarity of such
+                statements.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CallerJS" displayName="Use of &apos;caller&apos; property">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports on any uses of the &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;caller&lt;/font&gt;&lt;/b&gt; property in a JavaScript function.
+Use of this property to access the stack frame of the calling method can be extremely confusing, and result in subtle bugs.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="NegatedIfStatementJS" displayName="Negated &apos;if&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt; statements
+                in JavaScript content which contain &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;else&lt;/font&gt;&lt;/b&gt; branches and whose conditions are negated.
+                Flipping the order of the &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt; and &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;
+                else&lt;/font&gt;&lt;/b&gt;
+                branches will usually increase the clarity of such statements.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="MagicNumberJS" displayName="Magic number">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports all instances of &quot;magic numbers&quot;, literal numeric constants used without declaration,
+                used in JavaScript code.
+&quot;Magic numbers&quot; can result in code whose intention is extremely unclear, and may result in errors if a &quot;magic
+number&quot; is changed in one code location but not another.  The numbers 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 
+0.0 and 1.0 are not reported by this inspection.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ConditionalExpressionJS" displayName="Conditional expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports ternary conditional expressions.  Some coding standards
+                prohibit such expressions, in favor of explicit &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt;
+                statements.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="EmptyStatementBodyJS" displayName="Statement with empty body">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports instances of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;while&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt;,
+                and &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;with&lt;/font&gt;&lt;/b&gt; statements whose bodies are empty.  While
+                occasionally useful, such statements are often the result of typos, and may cause confusion.
+                &lt;p&gt;
+                    Use the checkbox below to select whether statements whose bodies are empty block statements
+                    will be reported by this inspection.
+                &lt;/p&gt;
+
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="OverlyComplexArithmeticExpressionJS" displayName="Overly complex arithmetic expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript arithmetic expressions with too many terms. Such
+                expressions may be confusing and bug-prone.
+                &lt;p&gt;
+                    Use the field provided below to specify the maximum number of terms allowed in an arithmetic
+                    expression.
+                  &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="OctalIntegerJS" displayName="Octal Integer">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of octal integer literals in JavaScript code. Some coding standards prohibit the
+                use of octal literals, as they may be easily confused with decimal literals.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ConfusingFloatingPointLiteralJS" displayName="Confusing floating point literal">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any JavaScript floating point numbers which do not have a decimal point, numbers before the decimal point,
+and numbers after the decimal point.  Such literals may be confusing, and violate several coding standards. &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CommaExpressionJS" displayName="Comma expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript comma expressions.  Comma
+                expressions are often a sign of overly clever code, and may lead to subtle bugs.
+                Comma expressions in the initializer or update section of a &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt;
+                loop are ignored by this inspection.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PointlessArithmeticExpressionJS" displayName="Pointless arithmetic expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of pointless arithmetic
+                expressions in JavaScript content. Such expressions include adding or subtracting zero, multiplying by
+                zero or one,
+                division by one, and shift by zero. Such expressions may be the result of automated refactorings
+                not completely followed through to completion, and in any case are unlikely to be what the developer
+                intended to do.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="VoidExpressionJS" displayName="&apos;void&apos; expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;void&lt;/font&gt;&lt;/b&gt; expressions
+                in JavaScript statements.  Since &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;void&lt;/font&gt;&lt;/b&gt; behaves
+                completely differently in JavaScript and Java, these expressions maybe confusing.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="IncrementDecrementResultUsedJS" displayName="Result of increment or decrement used">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports increment (&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;++&lt;/font&gt;&lt;/b&gt;) or decrement
+                (&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;--&lt;/font&gt;&lt;/b&gt;) expressions where the result of the assignment is
+                used in a containing expression.  Such assignments can result in confusion due to order
+                of operations, as evaluation of the assignment may effect the outer expression in unexpected
+                ways.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Code quality tools">
+    <inspection shortName="GjsLint" displayName="Closure Linter">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Runs &lt;b&gt;&lt;a href=&quot;http://code.google.com/p/closure-linter&quot;&gt;Closure Linter&lt;/a&gt;&lt;/b&gt; that enforces the guidelines set by the &lt;a href=&quot;http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml&quot;&gt;Google JavaScript Style Guide&lt;/a&gt;. The linter handles style issues so that you can focus on the code.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSHint" displayName="JSHint">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Runs &lt;b&gt;&lt;a href=&quot;http://jshint.com&quot;&gt;JSHint&lt;/a&gt;&lt;/b&gt; validator for specified JavaScript file.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSLint" displayName="JSLint">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Runs &lt;b&gt;&lt;a href=&quot;http://jslint.com&quot;&gt;JSLint&lt;/a&gt;&lt;/b&gt; validator for specified JavaScript file.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Probably bug">
+    <inspection shortName="PhpAssignmentInConditionInspection" displayName="Assignment in condition">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+Using assignments in conditional expressions may cause errors that are hard to detect and is therefore considered bad programming practice.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpForeachArrayIsUsedAsValueInspection" displayName="Foreach array is used as value">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Using a variable both as an &apos;array expression&apos; and as a &apos;key&apos; or &apos;value&apos; most often is a typing error.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpConstantReassignmentInspection" displayName="Constant reassignment">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+   Second assignment has no effect
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpWrongStringConcatenationInspection" displayName="Wrong string concatenation">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  This inspection detects attempts to concatenate strings using &apos;+&apos; operator instead of &apos;.&apos;. In most cases it is coding error.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpDivisionByZeroInspection" displayName="Division by zero">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+      Reports division by zero or modulo by zero.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpVoidFunctionResultUsedInspection" displayName="Void function result used">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  The value of a void function is most likely used by mistake, because such functions do not have a return value.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpToStringImplementationInspection" displayName="Method __toString implementation">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  __toString method implementation was not found.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpToStringReturnInspection" displayName="Method __toString return type">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  __toString method must return a string, as otherwise a fatal E_RECOVERABLE_ERROR level error is emitted.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpForeachNestedOuterKeyValueVariablesConflictInspection" displayName="Nested vs outer &apos;foreach&apos; variables conflict">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  In most cases, using the same variable as a key or value both by the inner and outer ‘foreach’ loops either is an error or may result in an error in the future.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpNonCompoundUseInspection" displayName="Unnecessary statement use">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  The use statement with non-compound name has no effect
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpDuplicateCaseInspection" displayName="Duplicate case in switch statement">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  This inspection reports any duplicated case expressions in switch statement.&lt;br/&gt;
+  If switch contains multiple case expressions, only the first one will be executed.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpExpressionResultUnusedInspection" displayName="Expression result unused">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Expression is calculated but the calculation result is not used anywhere. This may be caused by a misspelling when the ‘=’ operator is replaced with ‘==’ by mistake.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpPassByRefInspection" displayName="Pass parameter by reference">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Only variable can be pass by reference.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpSillyAssignmentInspection" displayName="Silly assignment">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+The assignment is pointless and can be removed.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpMissingBreakStatementInspection" displayName="Missing &apos;break&apos; statement">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Case clause execution can unintentionally falls through the next case, which is most often an error. A break or a return statement at the end of the case will prevent this error.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpDuplicateArrayKeysInspection" displayName="Duplicate array keys">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  This inspection reports any duplicated keys on array creation expression.&lt;br/&gt;
+  If multiple elements in the array declaration use the same key, only the last one will be used as all others are overwritten.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="SQL">
+    <inspection shortName="SqlDeprecateTypeInspection" displayName="Deprecated type">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  Since 8.0 the &apos;long&apos; type is deprecated and not recommended to use (because API for this type doesn&apos;t utilize character streams but transfer whole values each time).
+  In Oracle, do not create a table with LONG columns. Use LOB columns (CLOB, NCLOB, BLOB) instead. LONG columns are supported only for backward compatibility.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlDropIndexedColumnInspection" displayName="Index is dependent on column">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection checks dropping indexed columns in MS SQL and Sybase SQL Server.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="SqlResolveInspection" displayName="Unresolved reference">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection performs unresolved SQL references check.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlPostgresqlSelectFromProcedureInspection" displayName="PostgreSQL select from procedure call check">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  Select from &lt;strong&gt;dblink&lt;/strong&gt; or function that returns record require typed alias list.
+  Scalar functions do not require alias and forbid typed alias lists completely.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlNoDataSourceInspection" displayName="No data sources configured">&lt;html&gt;
+&lt;body&gt;
+Prompts one to create a data source if there is none.
+&lt;!-- tooltip end --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlConstantConditionInspection" displayName="Constant condition">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection reports those conditions in the where or join clauses that are always &lt;strong&gt;true&lt;/strong&gt; or &lt;strong&gt;false&lt;/strong&gt;.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="SqlAmbiguousColumnInspection" displayName="Ambiguous reference">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection checks that column reference resolves to a single column
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlAutoIncrementDuplicateInspection" displayName="Auto-increment duplicate">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection checks &lt;strong&gt;auto_increment&lt;/strong&gt; duplicates in MySQL dialect. A table in MySQL can contain only one auto-incrementing field.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="SqlDialectInspection" displayName="SQL dialect detection">&lt;html&gt;
+&lt;body&gt;
+Detects the best matching SQL dialect for files in &lt;b&gt;keywords only&lt;/b&gt; dialect.
+&lt;!-- tooltip end --&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlIdentifierInspection" displayName="Identifier should be quoted">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection performs SQL identifier names check.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlAddNotNullColumnInspection" displayName="Adding not null column without default value">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  Necessary to specify the default value for the new column with not null constraint.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlDeliverTableNameInspection" displayName="Each derived table should have alias">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection checks that each derived table should have own alias.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlShouldBeInGroupByInspection" displayName="Column should be in group by clause">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection checks that column should be in group by clause or inside aggregate function call.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlInsertValuesInspection" displayName="VALUES clause cardinality">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection checks that the number of VALUES (...) parameters matches target table column list size
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlCheckUsingColumnsInspection" displayName="Check using clause columns">&lt;html&gt;
+&lt;body&gt;
+  This inspection checks that columns inside using clause exist in both tables.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="SqlTypeInspection" displayName="Types compatibility">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection performs type-related check.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="XSLT">
+    <inspection shortName="XsltTemplateInvocation" displayName="Template Invocation Problems">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspection checks for problems in invocations of named XSLT templates, such as missing arguments, passing
+  arguments that are not declared by the template or passing an argument for a certain parameter more than once.
+&lt;/p&gt;
+
+&lt;p&gt;
+  The inspection assumes that parameters declared with a default-value are optional and will not complain if an
+  invocation does not specify an argument for such parameters.
+&lt;/p&gt;
+
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="XsltUnusedDeclaration" displayName="Unused Variable/Parameter">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspection reports local variables and parameters that are never used.
+&lt;/p&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="XsltVariableShadowing" displayName="Variable Shadowing">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspections checks for shadowed XSLT variables which can lead to possibly undesired effects.
+&lt;/p&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="XsltDeclarations" displayName="Declaration Problems">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspections checks for various problems in declarations of XSLT variables, parameters and named templates:
+&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Duplicate declarations&lt;/li&gt;
+  &lt;li&gt;Illegal identifiers&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="CSS">
+    <inspection shortName="CssUnitlessNumber" displayName="Missing/redundant measure unit">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection highlights CSS number property values for which no units
+  of measurement are specified.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssUnknownTarget" displayName="Unknown file or directory">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks references to files and directories&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssOptimizeSimilarProperties" displayName="Properties can be replaced with shorthand">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection tries to find similar CSS properties, which can be transformed to shorter form (shorthand; padding for individual sides can be shortened to &apos;padding&apos; shorthand if possible, etc).&lt;br&gt;
+&lt;/font&gt;
+&lt;p&gt;&lt;font face=&quot;verdana&quot; size=&quot;-2&quot;&gt;New in 8&lt;/font&gt;&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssConvertColorToHexInspection" displayName="RGB color function instead of #HEX representation">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects CSS colors which are defined as CSS rgb() function and provides an
+  intention to convert such values to its HEX representation.&lt;br&gt;&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssMissingSemicolon" displayName="Missing semicolon">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects missing semicolon at the end of declarations.&lt;br&gt;&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CssUnusedSymbol" displayName="Unused CSS selector">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects unused CSS classes or IDs within a file.&lt;br&gt;&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssUnknownProperty" displayName="Unknown CSS property">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Highlights CSS properties that are unknown, and allows to define such properties as &apos;custom&apos; to avoid highlighting them as invalid.&lt;br&gt;
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="W3CssValidation" displayName="W3C CSS validator">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection validates the CSS with W3C CSS validator library.&lt;br&gt;&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssOverwrittenProperties" displayName="Overwritten property value">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection highlights CSS properties, which are being overwritten in the same ruleset block.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssNoGenericFontName" displayName="Missing generic font name">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection verifies that the CSS &lt;b&gt;font-family&lt;/b&gt; property contains a generic font name as a fallback alternative.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssConvertColorToRgbInspection" displayName="#HEX color representation instead of RGB color function">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects CSS colors which are defined as HEX, and provides a quickfix action to convert such values to a CSS rgb() function call.&lt;br&gt;&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Data flow issues">
+    <inspection shortName="UnnecessaryLocalVariableJS" displayName="Redundant local variable">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of unnecessary JavaScript local variables, which add
+nothing to the comprehensibility of a function.  Variables caught include local variables
+which are immediately returned, local variables that are immediately assigned to another
+variable and then not used, and local variables which always have the same value as another
+local variable or parameter.
+&lt;p&gt;
+Use the checkbox below to have this inspection ignore variables which are immediately
+returned or thrown.  Some coding styles suggest using such variables for clarity and
+ease of debugging.
+&lt;/p&gt;
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ReuseOfLocalVariableJS" displayName="Reuse of local variable">&lt;html&gt;
+&lt;body&gt;
+This inspection reports any instances where JavaScript local variables are &quot;reused&quot;, overwriting their
+values with new values unrelated to their original use.  Such local variable reuse may be confusing,
+as the intended semantics of the local variable may vary with each use.  It may also be
+prone to bugs, if code changes result in values that were thought to be overwritten actually
+being live.   It is good practices to keep variable lifetimes as short as possible, and not
+reuse local variables for the sake of brevity.
+      &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="LESS">
+    <inspection shortName="LessResolvedByNameOnly" displayName="Resolved by name only">&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection warns about less elements that are not imported explicitly and resolved through all project less-files only by name.
+  You have no guaranties that these elements will be resolved at the production.
+&lt;/font&gt;
+</inspection>
+    <inspection shortName="LessUnresolvedMixin" displayName="Unresolved mixin">&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection warns about less mixin invocation which can&apos;t be resolved to any valid target.
+&lt;/font&gt;
+</inspection>
+    <inspection shortName="LessUnresolvedVariable" displayName="Unresolved variable">&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;
+  This inspection warns about less variable references which can&apos;t be resolved to any valid target.
+&lt;/font&gt;</inspection>
+  </group>
+  <group name="RELAX NG">
+    <inspection shortName="UnresolvedReference" displayName="Unresolved References">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspections checks for any unresolved references to named patterns (&quot;define&quot;) in a RELAX-NG file in XML Syntax.
+  For unresolved references, a QuickFix is offered to create a corresponding define-element.
+&lt;/p&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by RELAX-NG Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="UnusedDefine" displayName="Unused Define">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspections checks for any unused named patterns (&quot;define&quot;) in a RELAX-NG file (XML or Compact Syntax) and
+  highlights them as unused symbols. This is done with respect to includes from other files, i.e. a define is not
+  marked as unused if is is used through an include in another file.
+&lt;/p&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by RELAX-NG Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Probable bugs">
+    <inspection shortName="EqualityComparisonWithCoercionJS" displayName="Equality comparison which may cause unexpected coercion">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports on any JavaScript equality comparisons which may cause unexpected type coercions.
+                In JavaScript, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;==&lt;/font&gt;&lt;/b&gt; and &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;!=&lt;/font&gt;&lt;/b&gt;
+                cause type coercions, which can cause unexpected evaluations (e.g.  &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;0 == false&lt;/font&gt;&lt;/b&gt;
+                = &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;true&lt;/font&gt;&lt;/b&gt;.
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;==&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;!=&lt;/font&gt;&lt;/b&gt; comparisions
+                to &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;0&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&apos;&apos;&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;null&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;true&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;false&lt;/font&gt;&lt;/b&gt;, or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;undefined&lt;/font&gt;&lt;/b&gt; will
+                be flagged by this inspection.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ForLoopThatDoesntUseLoopVariableJS" displayName="&apos;for&apos; loop where update or condition does not use loop variable">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt; loops where
+                the condition or
+                update does not use the &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt; loop variable.
+        &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="InfiniteLoopJS" displayName="Infinite loop statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font
+                    color=&quot;#000080&quot;&gt;while&lt;/font&gt;&lt;/b&gt;,
+                or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;do&lt;/font&gt;&lt;/b&gt; statements which
+                can only exit by throwing an exception. While such statements may be correct, they
+                are often a symptom of coding errors.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="TextLabelInSwitchStatementJS" displayName="Text label in &apos;switch&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+
+                This inspection reports any instances of labelled statements inside of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statements.
+While occasionally intended, this construction is often the result of a typo.
+
+&lt;pre&gt;
+    &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt;(x)
+    {
+        &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;case&lt;/font&gt;&lt;/b&gt; 1:
+        case2:   //typo!
+        &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;case&lt;/font&gt;&lt;/b&gt; 3:
+            &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;break&lt;/font&gt;&lt;/b&gt;;
+    }
+&lt;/pre&gt;
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="NonShortCircuitBooleanExpressionJS" displayName="Non short-circuit boolean expression">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports on any uses in JavaScript code of the non-short-circuit forms of boolean &apos;and&apos; and &apos;or&apos; ( &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&amp;&lt;/font&gt;&lt;/b&gt;
+and &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;|&lt;/font&gt;&lt;/b&gt; ).  The non-short-circuit versions are occasionally useful, but
+their presence is often due to typos of the short-circuit forms ( &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&amp;&amp;&lt;/font&gt;&lt;/b&gt;
+and &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;||&lt;/font&gt;&lt;/b&gt; ), and may lead to subtle bugs.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="InfiniteRecursionJS" displayName="Infinite recursion">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of JavaScript functions which must either recurse
+infinitely or throw an exception.  functions reported by this inspection can not
+return normally.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CoffeeScriptSwitchStatementWithNoDefaultBranch" displayName="&apos;switch&apos; statement with no default branch">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statements in CoffeeScript content which
+lack &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;default&lt;/font&gt;&lt;/b&gt; branches.  Such statements
+may result in difficult bugs, if unexpected cases are silently ignored
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CoffeeScriptInfiniteLoop" displayName="Infinite loop statement">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt;, &lt;b&gt;&lt;font
+    color=&quot;#000080&quot;&gt;while&lt;/font&gt;&lt;/b&gt;,
+or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;do&lt;/font&gt;&lt;/b&gt; statements which
+can only exit by throwing an exception. While such statements may be correct, they
+are often a symptom of coding errors.
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSComparisonWithNaN" displayName="Comparison with NaN">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks code for comparisons with NaN. Comparisons like &lt;b&gt;expr == NaN&lt;/b&gt; or &lt;b&gt;expr === NaN&lt;/b&gt; are always evaluated to &lt;b&gt;false&lt;/b&gt;.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="DivideByZeroJS" displayName="Divide by zero">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of division by zero or remainder by zero in JavaScript code.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CoffeeScriptSillyAssignment" displayName="Variable is assigned to itself">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any assignments of the form &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;x = x&lt;/font&gt;&lt;/b&gt; in CoffeeScript content.  These are pointless,
+and usually indicate programmer error.
+
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ObjectAllocationIgnoredJS" displayName="Result of object allocation ignored">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of JavaScript object allocation where the object allocated ignored.
+Such allocation expressions are legal JavaScript, but are usually either inadvertant, or
+evidence of a very odd object initialization strategy.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="JSConstructorReturnsPrimitive" displayName="Constructor returns primitive value">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks that function recognized as constructor does not return primitive values.
+  When called with &lt;b&gt;new&lt;/b&gt;, this value will be lost and object will be returned instead. To avoid warnings, you can explicitly specify function&apos;s return type with &lt;b&gt;@return&lt;/b&gt; tag.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="JSConsecutiveCommasInArrayLiteral" displayName="Consecutive commas in array literal">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks that array literals doesn&apos;t contain consecutive commas. Skipped element takes &lt;b&gt;undefined&lt;/b&gt; value,
+  but it could be done unintendedly, e.g. when commas are at the end of one line and at the beginning of the following.&lt;br&gt;
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="PHP">
+    <inspection shortName="PhpCSValidationInspection" displayName="PHP Code Sniffer validation">&lt;html&gt;
+&lt;body&gt;
+&lt;div&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Runs PHP Code Sniffer to find coding style problems.
+  &lt;br/&gt;&lt;br/&gt;
+  The inspection requires PHP Code Sniffer to be properly installed in &lt;a href=&quot;http://pear.php.net/&quot;&gt;PEAR&lt;/a&gt; home directory
+  as described here: &lt;a href=&quot;http://pear.php.net/package/PHP_CodeSniffer&quot;&gt;http://pear.php.net/package/PHP_CodeSniffer&lt;/a&gt;
+  and set up in the IDE at Settings|PHP|Code Sniffer.
+&lt;/span&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="MessDetectorValidationInspection" displayName="PHP Mess Detector validation">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Runs &lt;a href=&quot;http://www.phpmd.org&quot;&gt;PHP Mess Detector&lt;/a&gt; external tool.
+  &lt;br/&gt;&lt;br/&gt;
+  The inspection requires PHP Mess Detector to be properly downloaded as described
+  &lt;a href=&quot;http://phpmd.org/download/index.html&quot;&gt;here&lt;/a&gt; and set up in the IDE at Settings|PHP|Mess Detector.
+  &lt;br/&gt;&lt;br/&gt;
+  You can use a &lt;a href=&quot;http://phpmd.org/rules/index.html&quot;&gt;predefined set of rules&lt;/a&gt; or add your own by specifying valid
+  &lt;code&gt;ruleset.xml&lt;/code&gt; files.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="JavaScript function metrics">
+    <inspection shortName="NestingDepthJS" displayName="Overly nested function">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript functions whose bodies are contain statements
+                too deeply nested within other statements.
+                Functions with too much statement
+                nesting may be confusing, and are a good sign that refactoring may be necessary.
+                &lt;p&gt;
+                    Use the field provided below to specify the maximum acceptable nesting depth a function might have.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="FunctionWithMultipleLoopsJS" displayName="Function with multiple loops">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript functions containing multiple loop statements. 
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ParametersPerFunctionJS" displayName="Function with too many parameters">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript functions with too many parameters.
+                Functions with too many parameters are often an indication of design weakness.
+                &lt;p&gt;
+                    Use the field provided below to specify the maximum acceptable number of parameters a function
+                    might have.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="FunctionWithMultipleReturnPointsJS" displayName="Function with multiple return points">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript functions have multiple return points.
+                Some coding standards warn against functions with multiple returns, as they may make functions
+                more difficult to understand and maintain.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ThreeNegationsPerFunctionJS" displayName="Function with more than three negations">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports JavaScript functions with three or more negation operations (&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;
+                !&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;!=&lt;/font&gt;&lt;/b&gt;).
+                Such functions may be unnecessarily confusing.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CyclomaticComplexityJS" displayName="Overly complex function">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript functions that have too high a cyclomatic complexity.
+                Cyclomatic complexity is basically a measurement of the number of branching points in a function. Functions
+                with too high a cyclomatic complexity may be confusing and difficult to test.
+                &lt;p&gt;
+                    Use the field provided below to specify the maximum acceptable cyclomatic complexity a function
+                    might have.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="StatementsPerFunctionJS" displayName="Overly long function">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of overly long JavaScript functions.
+                Function length is calculated by counting up the number of non-empty statements in the function.
+                Functions that are too long are error-prone, and difficult to test.
+                &lt;p&gt;
+                    Use the field provided below to specify the maximum acceptable number of statements a function
+                    might have.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="XPath">
+    <inspection shortName="ImplicitTypeConversion" displayName="Implicit Type Conversion">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspection checks for any implicit conversions between the predefined XPath-types STRING, NUMBER, BOOLEAN and
+  NODESET. While this is usually not a problem as the conversions are well-defined by the standard, this inspection can
+  help to write XSLT scripts that are more expressive about types and can even help to avoid subtle bugs:
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;code&gt;&amp;lt;xsl:if test=&quot;&lt;b&gt;foo&lt;/b&gt;&quot; /&gt;&lt;/code&gt; is not the same as &lt;code&gt;&amp;lt;xsl:if test=&quot;&lt;b&gt;string(foo)&lt;/b&gt;&quot; /&gt;&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  The first test checks whether the element &quot;foo&quot; exists (&lt;code&gt;count(foo) &gt; 0)&lt;/code&gt;, the latter one however is only
+  true if the element actually contains any text (&lt;code&gt;string-length(foo) &gt; 0&lt;/code&gt;). The plugin will then offer to
+  make the type-conversion more explicit.
+&lt;/p&gt;
+
+&lt;p&gt;
+  There are several options to adjust the inspection to personal preferences by offering the possibility to
+  individually enable it for implicit conversions between certain types.&lt;br&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  The plugin can also be told to always flag explicit conversions that do not result in the actually expected type, such
+  as &lt;code&gt;&amp;lt;xsl:if test=&quot;number(foo)&quot; /&gt;&lt;/code&gt; and provides a special option to ignore the conversion from NODESET
+  to BOOLEAN by using the &lt;code&gt;string()&lt;/code&gt; function as a shortcut for writing &lt;code&gt;string-length() &gt; 0&lt;/code&gt;.
+&lt;/p&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="HardwiredNamespacePrefix" displayName="Hardwired Namespace Prefix">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspection checks for comparisons of the &lt;tt&gt;name()&lt;/tt&gt;-function against strings that contain a &quot;:&quot; - which
+  usually indicates a hardwired namespace-prefix in the comparison. Such code will break when run against XML that
+  uses a different prefix for the same namespace.
+&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;code&gt;&amp;lt;xsl:if test=&quot;name() = &apos;xlink:href&apos;&quot;&gt;...&amp;lt;xsl:if&gt;&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="RedundantTypeConversion" displayName="Redundant Type Conversion">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspection checks whether any type-conversion with the functions &lt;code&gt;string()&lt;/code&gt;, &lt;code&gt;number()&lt;/code&gt; or
+  &lt;code&gt;boolean()&lt;/code&gt; is redundant, i.e. whether the type of argument is the same as the functions return type or if
+  the expected type of the expression is of type &quot;any&quot;. While such an explicit conversion may sometimes be intentional
+  to emphasize the type, this can usually be safely removed.
+&lt;/p&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="IndexZeroUsage" displayName="Use of index 0 in XPath predicates">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspection checks for any accidental use of zero in a predicate index or in a comparision with the function
+  &lt;code&gt;position()&lt;/code&gt;. Such is almost always a bug because in XPath, the index starts at one, &lt;em&gt;not&lt;/em&gt; at zero.
+&lt;/p&gt;
+
+&lt;p&gt;
+  Example:
+&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;code&gt;//someelement[&lt;b&gt;position() = 0&lt;/b&gt;]&lt;/code&gt; or &lt;code&gt;//something[&lt;b&gt;0&lt;/b&gt;]&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="CheckNodeTest" displayName="Check Node Test">&lt;html&gt;
+&lt;head&gt;
+  &lt;style type=&quot;text/css&quot;&gt;
+    body, table {
+      font-family: Verdana, sans-serif;
+      font-size: 100%;
+      padding-left: 2mm;
+    }
+
+    #footer {
+      font-size: 95%;
+      padding-top: 10px;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+&lt;p&gt;
+  This inspection checks whether any element/attribute names that are used in XPath-expressions are actually part of an
+  associated XML file or are defined in a referenced schema. This helps to avoid problems caused by typos in
+  XPath-expressions that would otherwise occur when running the script and may even then not be recognized immediately.
+&lt;/p&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;p&gt;
+  &lt;code&gt;&amp;lt;xsl:template match=&quot;&lt;b&gt;h:txtarea&lt;/b&gt;&quot; /&gt;&lt;/code&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  If the prefix &quot;h&quot; is bound to the XHTML namespace, the inspection will flag this part of the match-expression as an
+  unknown element name because the correct name of the element is &quot;textarea&quot;.
+&lt;/p&gt;
+
+
+&lt;p id=&quot;footer&quot;&gt;Powered by XPathView + XSLT-Support&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Code Style">
+    <inspection shortName="PhpTraditionalSyntaxArrayLiteralInspection" displayName="Traditional syntax array literal detected">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Short syntax can be used in array literals.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpUnnecessaryFullyQualifiedNameInspection" displayName="Unnecessary fully qualified name">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif;&quot;&gt;
+  Reports on fully qualified class names which can be shortened. The quick fix for this inspection will shorten the fully qualified names, adding &apos;use&apos; statement as necessary.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpRedundantClosingTagInspection" displayName="Redundant closing tag">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Closing tag &apos;?&gt;&apos; is redundant for files containing only PHP code
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpMultipleClassesDeclarationsInOneFile" displayName="Multiple classes declarations in one file">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+      Reports not conforming to PSR-0 standard: multiple class declarations in one file
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="JavaScript validity issues">
+    <inspection shortName="StringLiteralBreaksHTMLJS" displayName="String literal which breaks HTML parsing">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of JavaScript string literals which contain the sequence &apos;&amp;lt;/&apos;.  Such strings
+                are legal JavaScript, but may result in incorrect parsing of any HTML the JavaScript is embedded in.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="FunctionWithInconsistentReturnsJS" displayName="Function with inconsistent returns">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript functions which return a value in
+                some circumstances and return without a value in others. While legal,
+                such code almost certainly represents a programming error
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="DuplicateCaseLabelJS" displayName="Duplicate case label">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any duplicated
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;case&lt;/font&gt;&lt;/b&gt; labels on JavaScript
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statements.
+                Such &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statements are normally
+                an indication of programmer error.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="BadExpressionStatementJS" displayName="Expression statement which is not assignment or call">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports expression statements which are not assignments or calls.
+                Such statements have no dubious semantics, are normally the result of programmer
+                error.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="DebuggerStatementJS" displayName="&apos;debugger&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports JavaScript &apos;debugger&apos; statements, used for interaction
+                with Javascript debuggers.  Such statements should probably not be found in production code.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ThisExpressionReferencesGlobalObjectJS" displayName="&apos;this&apos; expression which references the global object">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports instances of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;this&lt;/font&gt;&lt;/b&gt;
+                expression occuring outside of object literals or constructor bodies.  Such &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;this&lt;/font&gt;&lt;/b&gt;
+                expressions are legal JavaScript, and reference the top-level &quot;global&quot; JavaScript object,
+                but are largely useless.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="UnreachableCodeJS" displayName="Unreachable code">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript code which can never be executed.
+                Such code almost certainly represents a programming error
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ReservedWordUsedAsNameJS" displayName="Reserved word used as name">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports on any uses of JavaScript reserved words being used as a name.  The JavaScript specification
+reserves a number of words which are currently not used as JavaScript keywords.  Using those words as identifiers may
+result in broken code if later versions of JavaScript use them as keywords.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Assignment issues">
+    <inspection shortName="AssignmentToFunctionParameterJS" displayName="Assignment to function parameter">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of assignment to a
+                variable declared as a JavaScript function parameter. It also reports any attempt to increment or
+                decrement the variable.
+                While occasionally intended, this construct can be extremely confusing, and is often the result of a
+                programmer error.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="NestedAssignmentJS" displayName="Nested assignment">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of JavaScript assignment expressions nested inside other expressions.  While admirably terse,
+such expressions may be confusing, and violate the general design priniciple that a given construct should do precisely one thing.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ReplaceAssignmentWithOperatorAssignmentJS" displayName="Assignment replaceable with operator assignment">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports instances of assignment operations in JavaScript content which can be replaced
+                by operator-assignment. Code using operator assignment may be clearer, and theoretically more
+                performant.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="AssignmentResultUsedJS" displayName="Result of assignment used">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports assignment expressions where the result of the assignment is
+                used in a containing expression. Such assignments are often indications of coding errors
+                such as using &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;=&lt;/font&gt;&lt;/b&gt; instead of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;==&lt;/font&gt;&lt;/b&gt;.
+                Morever, they can result in confusion due to order
+                of operations, as evaluation of the assignment may effect the outer expression in unexpected
+                ways.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="AssignmentToForLoopParameterJS" displayName="Assignment to &apos;for&apos; loop parameter">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of assignment to a
+                variable declared as a JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt; loop parameter.
+                While occasionally intended, this construct can be extremely confusing, and is often the result of a
+                programmer error.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+?</inspection>
+    <inspection shortName="SillyAssignmentJS" displayName="Variable is assigned to itself">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any assignments of the form &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;x = x&lt;/font&gt;&lt;/b&gt; in JavaScript content.  These are pointless,
+                and usually indicate programmer error.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="XML">
+    <inspection shortName="XmlWrongRootElement" displayName="Wrong root element">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks if root tag name is the same as in &amp;lt;doctype&amp;gt;.&lt;br&gt;
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="XmlUnusedNamespaceDeclaration" displayName="Unused XML schema declaration">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Checks for unused namespace declarations and location hints in XML
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CheckDtdRefs" displayName="Unresolved DTD reference">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Checks consistency of &lt;b&gt;DTD&lt;/b&gt; specific references, e.g. references to XML entity or to DTD element declaration.
+  The validation works in DTD or XML file types.&lt;br&gt;
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="XmlDuplicatedId" displayName="Duplicate ID">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks for duplicate &quot;id&quot; attributes in XML.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="XmlUnboundNsPrefix" displayName="Unbound XML namespace prefix">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks for unbound namespace prefixes in XML
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="XmlPathReference" displayName="File path resolving in XML">&lt;html&gt;
+&lt;body&gt;
+Highlights unresolved file references in XML.
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="XmlInvalidId" displayName="Unresolved ID">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection checks for unresolved &quot;id&quot; attributes in XML.
+&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CheckXmlFileWithXercesValidator" displayName="File does not pass external validation">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Thoroughly checks XML files for DTD / schema compliance using Xerces validator.
+  The validation works in XML or XHTML file types.&lt;br&gt;
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CheckTagEmptyBody" displayName="XML tag empty body">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;Reports &lt;b&gt;empty&lt;/b&gt; tag body.
+  The validation works in XML / JSP / JSPX / HTML/ XHTML file types.&lt;br&gt;
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Control flow issues">
+    <inspection shortName="TrivialConditionalJS" displayName="Redundant conditional expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of JavaScript conditional expressions of the form
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&lt;i&gt;condition&lt;/i&gt;?true:false&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;
+                &lt;i&gt;condition&lt;/i&gt;?false:true&lt;/font&gt;&lt;/b&gt;. These expressions may be safely simplified
+                to &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;&lt;i&gt;condition&lt;/i&gt;&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;!&lt;i&gt;condition&lt;/i&gt;
+            &lt;/font&gt;&lt;/b&gt;, respectively.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="DuplicateConditionJS" displayName="Duplicate condition in &apos;if&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports on any duplicate conditions among different branches of an
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt; statement in JavaScript content. While it may rarely be the
+                desired semantics, duplicate conditions usually represent programmer oversight.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="UnnecessaryReturnJS" displayName="Unnecessary &apos;return&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports on any unnecessary &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;return&lt;/font&gt;&lt;/b&gt; statements
+                in JavaScript functions.  Unnecessary &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;return&lt;/font&gt;&lt;/b&gt; statements are those which
+                return no value and occur just before the function would have &quot;fallen through&quot; to the bottom.
+                These statements may be safely removed.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="LabeledStatementJS" displayName="Labeled statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any labeled statements in Javascript content.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="DefaultNotLastCaseInSwitchJS" displayName="&apos;default&apos; not last case in &apos;switch&apos;">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statements where the &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;default&lt;/font&gt;&lt;/b&gt; case
+comes before some other case.  This construct is unnecessarily confusing.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ContinueStatementJS" displayName="&apos;continue&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;continue&lt;/font&gt;&lt;/b&gt; statements in Javascript content.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="FallThroughInSwitchStatementJS" displayName="Fall-through in &apos;switch&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any cases where control can proceed from one branch of a
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statement to the next, in Javascript content.  Such &quot;fall-through&quot; is often
+                a result of programmer error.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ConstantIfStatementJS" displayName="Constant if statement">&lt;html&gt;
+&lt;body&gt;
+This inspection reports any instances of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt; statements of the form
+&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if(true)...&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if(false)...&lt;/font&gt;&lt;/b&gt;.
+These statements sometimes occur due to automatic refactorings, and may obviously
+be simplified.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="TailRecursionJS" displayName="Tail recursion">&lt;html&gt;
+&lt;body&gt;
+This inspection reports any instances of tail recursion, that is when a JavaScript function calls itself
+as its last action before returning.  Tail recursion can always be replaced by looping, which will be considerably faster.
+Some JavaScript engines perform this optimization, while others do not.  Thus, tail recursive solutions may have considerably different
+performance characteristics on different environments.
+  &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ContinueStatementWithLabelJS" displayName="&apos;continue&apos; statement with label">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any labelled &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;continue&lt;/font&gt;&lt;/b&gt; statements in Javascript content.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="IfStatementWithTooManyBranchesJS" displayName="&apos;if&apos; statement with too many branches">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports instances of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt; statements with too many
+                branches in Javascript content. Such statements may be confusing, and are
+                often the sign of inadequate levels of design abstraction.
+                &lt;p&gt;
+                    Use the field below to specify the maximum number of branches expected.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="SwitchStatementWithNoDefaultBranchJS" displayName="&apos;switch&apos; statement with no default branch">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statements in Javascript content which
+                lack &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;default&lt;/font&gt;&lt;/b&gt; branches.  Such statements
+                may result in difficult bugs, if unexpected cases are silently ignored
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="LoopStatementThatDoesntLoopJS" displayName="Loop statement that doesn&apos;t loop">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instance of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt;,
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;while&lt;/font&gt;&lt;/b&gt; and &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;do&lt;/font&gt;&lt;/b&gt; statements
+                in JavaScript content whose bodies are guaranteed to execute at most once. Normally, this is
+                an indication of a bug. Powered by InspectionJS
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PointlessBooleanExpressionJS" displayName="Pointless boolean expression">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of pointless or pointlessly
+                complicated boolean expressions in JavaScript content. Such expressions include anding with true, oring with false,
+                equality comparison with a boolean literal, or negation of a boolean literal. Such expressions may be
+                the result of automated refactorings
+                not completely followed through to completion, and in any case are unlikely to be what the developer
+                intended to do.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="IfStatementWithIdenticalBranchesJS" displayName="&apos;if&apos; statement with identical branches">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt;
+                statements with identical &quot;then&quot; and &quot;else&quot; branches in JavaScript content. Such statements are almost
+                certainly programmer error.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="UnnecessaryContinueJS" displayName="Unnecessary &apos;continue&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+              This inspection reports on any unnecessary &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;continue&lt;/font&gt;&lt;/b&gt; statements at the end of loops, in JavaScript content. These statements may be safely removed.
+    &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="NestedSwitchStatementJS" displayName="Nested &apos;switch&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statements in Javascript content which
+                are nested in other &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;switch&lt;/font&gt;&lt;/b&gt; statements.  Such nested switch statements can be
+                very confusing, particularly if proper indenting is not followed.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="UnnecessaryLabelOnBreakStatementJS" displayName="Unnecessary label on &apos;break&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any labelled &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;break&lt;/font&gt;&lt;/b&gt; statements 
+                in Javascript content whose labels may be removed without changing the flow of control.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="BreakStatementJS" displayName="&apos;break&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;break&lt;/font&gt;&lt;/b&gt; statements in Javascript content.
+                &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;break&lt;/font&gt;&lt;/b&gt; statements that end case blocks are not reported.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ConstantConditionalExpressionJS" displayName="Constant conditional expression">&lt;html&gt;
+&lt;body&gt;
+This inspection reports any instances of conditional expressions of the form
+&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;true?&lt;i&gt;result1&lt;/i&gt;:&lt;i&gt;result2&lt;/i&gt;&lt;/font&gt;&lt;/b&gt; or &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;false?&lt;i&gt;result1&lt;/i&gt;:&lt;i&gt;result2&lt;/i&gt;&lt;/font&gt;&lt;/b&gt;.
+These expressions sometimes occur as the result of automatic refactorings, and may obviously be simplified.
+  &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ConditionalExpressionWithIdenticalBranchesJS" displayName="Conditional expression with identical branches">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of ternary conditional
+                expressions with identical &quot;then&quot; and &quot;else&quot; branches in JavaScript content.
+                Such statements are almost certainly programmer error.
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="UnnecessaryLabelJS" displayName="Unnecessary label">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any instances of unused labels in JavaScript code.
+ &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="ForLoopReplaceableByWhileJS" displayName="&apos;for&apos; loop may be replaced by &apos;while&apos; loop">&lt;html&gt;
+&lt;body&gt;
+
+This inspection reports any instances of JavaScript &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt; loops
+which contain neither initialization or update components, and can thus be replaced by
+simpler &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;while&lt;/font&gt;&lt;/b&gt; statements.
+&lt;p&gt;Use the checkbox below if you wish this inspection to ignore &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;for&lt;/font&gt;&lt;/b&gt; loops with trivial or non-existent conditions.&lt;/p&gt;
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="UnnecessaryLabelOnContinueStatementJS" displayName="Unnecessary label on &apos;continue&apos; statement">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any labelled &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;continue&lt;/font&gt;&lt;/b&gt; statements 
+                in Javascript content whose labels may be removed without changing the flow of control.
+                &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="TrivialIfJS" displayName="Redundant &apos;if&apos; statement">&lt;html&gt;
+&lt;body&gt;
+				This inspection reports instances of JavaScript &lt;b&gt;&lt;font
+					color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt; statements which
+				can be simplified to single assignment or
+				&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;return&lt;/font&gt;&lt;/b&gt; statements. For example:
+&lt;pre&gt;
+	&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;if&lt;/font&gt;&lt;/b&gt;(foo())
+	{
+		&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;return&lt;/font&gt;&lt;/b&gt; true;
+	}
+	&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;else&lt;/font&gt;&lt;/b&gt;
+	{
+		&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;return&lt;/font&gt;&lt;/b&gt; false;
+	}
+&lt;/pre&gt;
+				can be simplified to
+&lt;pre&gt;
+	&lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;return&lt;/font&gt;&lt;/b&gt; foo();
+&lt;/pre&gt;
+&lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="BreakStatementWithLabelJS" displayName="&apos;break&apos; statement with label">&lt;html&gt;
+&lt;body&gt;
+
+                This inspection reports any labelled &lt;b&gt;&lt;font color=&quot;#000080&quot;&gt;break&lt;/font&gt;&lt;/b&gt; statements in Javascript content.
+            &lt;br&gt;&lt;small&gt;Powered by InspectionJS&lt;/small&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+  </group>
+  <group name="Undefined">
+    <inspection shortName="PhpUndefinedVariableInspection" displayName="Undefined variable">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  The inspection can produce two types of warnings:
+  &lt;ul&gt;
+    &lt;li&gt;The definition of the variable can not be found anywhere.&lt;br/&gt;
+        (&lt;i&gt;&quot;Undefined variable&quot;&lt;/i&gt;)&lt;/li&gt;
+    &lt;li&gt;There are one or more pathes to rich the line with the variable usage without defining it.&lt;br/&gt;
+      (&lt;i&gt;&quot;Variable might have not been defined&quot;&lt;/i&gt;)&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br/&gt;
+  All variables from files that contain &apos;include&apos; or &apos;require&apos; are considered as &lt;i&gt;defined&lt;/i&gt;
+  if the option &lt;i&gt;&quot;Ignore &apos;include&apos; and &apos;require&apos; statements&quot;&lt;/i&gt; is disabled.
+  &lt;br/&gt;&lt;br/&gt;
+  The inspection is enabled for &lt;a href=&quot;http://php.net/manual/en/language.namespaces.global.php&quot;&gt;global space&lt;/a&gt; by default.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUndefinedConstantInspection" displayName="Undefined constant">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Declaration of referenced constant is not found in built-in library and project files.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUndefinedClassInspection" displayName="Undefined class">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  &lt;li&gt;Undefined class: Declaration of referenced class is not found in built-in library and project files.
+  &lt;li&gt;Multiple declarations: this version of IDE *will* have problems with completion, member resolution
+  and inheritance analysis for all classes that have multiple definitions in project files (regardless of includes).
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUndefinedFieldInspection" displayName="Undefined field">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Referenced field is not found in subject class.
+  &lt;br/&gt;Note: Check is not performed on objects of type &quot;stdClass&quot; or derived.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUndefinedCallbackInspection" displayName="Undefined callback">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Reference in callback is not found.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpUndefinedMethodInspection" displayName="Undefined method">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Referenced method is not found in subject class.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUndefinedFunctionInspection" displayName="Undefined function">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Declaration of referenced function is not found in built-in library and project files.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUndefinedNamespaceInspection" displayName="Undefined namespace">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Referenced namespace is not found.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="PhpUndefinedGotoLabelInspection" displayName="Undefined goto label">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Label is not found in current scope.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</inspection>
+    <inspection shortName="PhpUndefinedClassConstantInspection" displayName="Undefined class constant">&lt;html&gt;
+&lt;body&gt;
+&lt;span style=&quot;font-family: verdana,serif; font-size: smaller;&quot;&gt;
+  Referenced constant is not found in subject class.
+&lt;/span&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+  <group name="Invalid elements">
+    <inspection shortName="CssInvalidAtRule" displayName="Unknown CSS at-rule">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects unknown CSS at-rules.&lt;br&gt;&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssShorthandPropertyValue" displayName="Invalid shorthand property value">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects shorthand values assigned to CSS attributes that do not support
+shorthand attributes. For example, a margin specification assigned to
+margin-top or margin-left attribute.&lt;br&gt;&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssInvalidCharsetRule" displayName="Invalid CSS @charset rule">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects misplaced @charset rules and inappropriate charset values.&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssInvalidElement" displayName="Invalid CSS element">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects inappropriate values assigned to CSS attributes. For example,
+invalid measurement units or values out of range.&lt;br&gt;&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssInvalidImport" displayName="Misplaced CSS @import">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects misplaced CSS @import declarations.&lt;br&gt;&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssInvalidPseudoSelector" displayName="Invalid CSS pseudo-selector">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects unknown and inappropriate pseudo-classes and pseudo-element.&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssInvalidHtmlTagReference" displayName="Invalid CSS selector">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects uknown CSS selectors and provides ability to declare them as a class or an id.&lt;br&gt;&lt;/font&gt;
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssRgbFunction" displayName="Invalid RGB function value">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection verifies the correctness of parameters of the
+  &lt;b&gt;rgb(r, g, b)&lt;/b&gt; function used in CSS attributes.
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+    <inspection shortName="CssNegativeValue" displayName="Negative CSS value">&lt;html&gt;
+&lt;body&gt;
+&lt;font face=&quot;verdana&quot; size=&quot;-1&quot;&gt;This inspection detects negative values assigned to CSS attributes that should never be
+  negative. For example, object width or height.&lt;br&gt;
+&lt;/font&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</inspection>
+  </group>
+</inspections>

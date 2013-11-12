@@ -1,8 +1,17 @@
 module.exports = function (grunt) {
+	require('load-grunt-tasks')(grunt);
 
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 		sources: ['src/*.*'],
+		dirs: {
+			sources: 'src/',
+			reports: 'reports/',
+			build: 'build/'
+		},
+		files: {
+			js: ['<%= dirs.sources %>js/libs/*.js', '<%= dirs.sources %>js/vanilla/*.js']
+		},
 		concat: {
 			options: {
 				separator: ';'
@@ -22,31 +31,62 @@ module.exports = function (grunt) {
 				}
 			}
 		},
-		qunit: {
-			files: ['test/**/*.html']
-		},
 		jshint: {
-			files: ['src/js/libs/*.js'],
+			files: ['<%= files.js %>'],
 			options: {
 				force: 'true',
-				jshintrc: 'build_config/.jshintrc',
+				jshintrc: '.jshintrc',
 				reporter: 'checkstyle',
-				reporterOutput: 'logs/check-jshint.xml',
+				reporterOutput: 'reports/jshint-checkstyle.xml'
+			}
+		},
+		csslint: {
+			options: {
+				csslintrc: '.csslintrc',
+				formatters: [
+					{id: 'csslint-xml', dest: 'reports/csslint.xml'},
+					{id: 'checkstyle-xml', dest: 'reports/csslint-checkstyle.xml'}
+				]
 			},
+			defaut: {
+				src: ['build/*.css']
+			}
 		},
 		watch: {
-			files: ['<%= sources %>'],
-			tasks: ['compass']
+			styles: {
+				files: ['src/*.*'],
+				tasks: ['compass']
+			},
+			options: {
+				debounceDelay: 200
+			}
 		},
 		compass: {
-			dist: {
+			options: {
+				sassDir: 'src/scss',
+				cssDir: 'build',
+				debugInfo: true
+			},
+			prod: {
 				options: {
-					sassDir: 'src/scss',
-					cssDir: 'build',
 					environment: 'production'
 				}
 			},
-			dev: {}
+			debug: {
+				options: {
+					environment: 'development'
+				}
+			}
+		},
+		plato: {
+			options: {
+				jshint: false
+			},
+			metrix: {
+				files: {
+					'reports/plato': '<%= files.js %>'
+				}
+			}
 		},
 		requirejs: {
 			compile: {
@@ -54,27 +94,115 @@ module.exports = function (grunt) {
 					name: 'index',
 					baseUrl: "src/js",
 					mainConfigFile: "config.js",
-					out: "build/index.build.js",
+					out: "build/index.min.js",
 					optimize: 'uglify2',
 					keepBuildDir: true,
 					generateSourceMaps: true,
 					preserveLicenseComments: false
 				}
 			}
+		},
+		concurrent: {
+			buildProd: [
+				'plato',
+				'csslint',
+				'buildScripts:prod',
+				'buildStyles:prod'
+			],
+
+			buildDebug: [
+				'buildStyles:debug',
+				'buildScripts:debug'
+			]
 		}
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-uglify');
-	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-qunit');
-	grunt.loadNpmTasks('grunt-contrib-watch');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-compass');
-	grunt.loadNpmTasks('grunt-contrib-requirejs');
-	grunt.loadNpmTasks('grunt-concurrent');
+	grunt.registerTask('build:prod', [
+		'jshint',
+		'concurrent:buildProd'
+		// build js
 
-	grunt.registerTask('test', ['jshint']);
-//  grunt.registerTask('default', ['jshint', 'qunit', 'concat', 'uglify']);
-	grunt.registerTask('default', ['compass', 'concat', 'uglify']);
+		// metrics plato
+		// metrics jshint
+		// metrics csslint
+
+		//
+	]);
+
+	grunt.registerTask('build:debug', [
+		// run local server for tests, livereload
+		'concurrent:buildDebug'
+		// watch tests
+
+		// watch build css:dev
+		// watch build js:dev
+	]);
+
+	grunt.registerTask('work', [        // alias 'watch'
+		// run local server for tests, livereload
+		// watch tests
+		'watch'
+		// watch build css:dev
+		// watch build js:dev
+	]);
+
+
+	/*  Helper tasks
+	 * ====================*/
+	grunt.registerTask('buildScripts:debug', [
+	]);
+
+	grunt.registerTask('buildScripts:prod', [
+		'concat',
+		'uglify'
+		// if Require -> run requireJs
+	]);
+
+	grunt.registerTask('buildStyles:debug', [
+		'compass:debug'
+	]);
+
+	grunt.registerTask('buildStyles:prod', [
+		'compass:prod'
+	]);
+
+/*
+	grunt.registerTask('buildTemplates', [
+		// handlebars , jade, emblem
+	]);
+*/
+
+/*
+
+	*/
+/* temp task *//*
+
+	grunt.registerTask('default', [
+		'plato',        // create plato metrics
+		'compass',      // process scss, concat, minify
+		'jshint',       // jshint, generate reports
+		'force:on',     // "force": turn on force mode
+		'csslint',      // csslint, generate reports
+		'force:restore' // "force": restore
+		// run tests
+	]);
+*/
+
+
+	/* Helper --FORCE task */
+	/* It set or unset force flag in grunt and should be used for certain tasks */
+	var previous_force_state = grunt.option("force");
+	grunt.registerTask("force", function (set) {
+		if (set === "on") {
+			grunt.option("force", true);
+		}
+		else if (set === "off") {
+			grunt.option("force", false);
+		}
+		else if (set === "restore") {
+			grunt.option("force", previous_force_state);
+		}
+	});
+
 
 };

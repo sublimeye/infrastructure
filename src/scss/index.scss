@@ -1,4 +1,8 @@
 /* adding comment */
 
-@import "normalize.css";
+@import "normalize";
 @import "screen";
+
+html {
+	background:transparent url('image.png') left top no-repeat;
+}

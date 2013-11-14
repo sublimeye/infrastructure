@@ -1,32 +1,18 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="PhantomJS 1.9.2 (Windows 7)" package="" timestamp="2013-11-14T14:00:10" id="0" hostname="NB-romo1" tests="9" errors="0" failures="1" time="0">
+  <testsuite name="PhantomJS 1.9.2 (Windows 7)" package="" timestamp="2013-11-14T14:06:45" id="0" hostname="NB-romo1" tests="9" errors="0" failures="0" time="0.002">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.2 Safari/534.34"/>
     </properties>
     <testcase name="Should have property model and view" time="0.001" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
-    <testcase name="ENTER_KEY should be equal 13" time="0.001" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <testcase name="ENTER_KEY should be equal 13" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="ESCAPE_KEY should be equal 27" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
-    <testcase name="Should have getCurrentPage method" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <testcase name="Should have getCurrentPage method" time="0.001" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="Get current page should return empty string for no url set" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="Should have prototype function" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="I love testing" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="I love testing" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
-    <testcase name="I love testing" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller">
-      <failure type="">AssertionError: Zero
-    at D:/web/infrastructure_9_karma/node_modules/karma-chai/node_modules/chai/chai.js:918
-    at D:/web/infrastructure_9_karma/node_modules/karma-chai/node_modules/chai/chai.js:2254
-    at D:/web/infrastructure_9_karma/test/js/controller.test.js:43
-    at D:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4263
-    at D:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4635
-    at D:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4694
-    at next (D:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4561)
-    at D:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4570
-    at next (D:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4514)
-    at D:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4538
-    at timeslice (D:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:5531)
-</failure>
-    </testcase>
+    <testcase name="I love testing" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <system-out><![CDATA[
 ]]></system-out>
     <system-err/>

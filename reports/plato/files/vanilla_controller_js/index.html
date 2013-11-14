@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome-ie7.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/jsoverson/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>vanilla/controller.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"></i></a></h2>
+      <p class="stat">71.69</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h2>
+      <p class="stat">334</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty"></i></a></h2>
+      <p class="stat">39.66</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs"></i></a></h2>
+      <p class="stat">2.47</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">/*global $$, $ */
+(function (window) {
+	&#039;use strict&#039;;
+
+	/**
+	 * Takes a model and view and acts as the controller between them
+	 *
+	 * @constructor
+	 * @param {object} model The model constructor
+	 * @param {object} view The view constructor
+	 */
+	function Controller(model, view) {
+		this.model = model;
+		this.view = view;
+
+		this.ENTER_KEY = 13;
+
+		this.ESCAPE_KEY = 27;
+
+		this.$main = $$(&#039;#main&#039;);
+		this.$toggleAll = $$(&#039;#toggle-all&#039;);
+		this.$todoList = $$(&#039;#todo-list&#039;);
+		this.$todoItemCounter = $$(&#039;#todo-count&#039;);
+		this.$clearCompleted = $$(&#039;#clear-completed&#039;);
+		this.$footer = $$(&#039;#footer&#039;);
+
+		window.addEventListener(&#039;load&#039;, function () {
+			this._updateFilterState();
+		}.bind(this));
+
+		window.addEventListener(&#039;hashchange&#039;, function () {
+			this._updateFilterState();
+		}.bind(this));
+	}
+
+	/**
+	 * An event to fire on load. Will get all items and display them in the
+	 * todo-list
+	 */
+	Controller.prototype.showAll = function () {
+		this.model.read(function (data) {
+			this.$todoList.innerHTML = this.view.show(data);
+		}.bind(this));
+	};
+
+	/**
+	 * Renders all active tasks
+	 */
+	Controller.prototype.showActive = function () {
+		this.model.read({ completed: 0 }, function (data) {
+			this.$todoList.innerHTML = this.view.show(data);
+		}.bind(this));
+	};
+
+	/**
+	 * Renders all completed tasks
+	 */
+	Controller.prototype.showCompleted = function () {
+		this.model.read({ completed: 1 }, function (data) {
+			this.$todoList.innerHTML = this.view.show(data);
+		}.bind(this));
+	};
+
+	/**
+	 * An event to fire whenever you want to add an item. Simply pass in the event
+	 * object and it&#039;ll handle the DOM insertion and saving of the new item.
+	 *
+	 * @param {object} e The event object
+	 */
+	Controller.prototype.addItem = function (e) {
+		var input = $$(&#039;#new-todo&#039;);
+		var title = title || &#039;&#039;;
+
+		if (e.keyCode === this.ENTER_KEY) {
+			if (e.target.value.trim() === &#039;&#039;) {
+				return;
+			}
+
+			this.model.create(e.target.value, function () {
+				input.value = &#039;&#039;;
+				this._filter(true);
+			}.bind(this));
+		}
+
+	};
+
+	/**
+	 * Hides the label text and creates an input to edit the title of the item.
+	 * When you hit enter or blur out of the input it saves it and updates the UI
+	 * with the new name.
+	 *
+	 * @param {number} id The id of the item to edit
+	 * @param {object} label The label you want to edit the text of
+	 */
+	Controller.prototype.editItem = function (id, label) {
+		var li =  label;
+
+		// This finds the &lt;label&gt;&#039;s parent &lt;li&gt;
+		while (li.nodeName !== &#039;LI&#039;) {
+			li = li.parentNode;
+		}
+
+		var onSaveHandler = function () {
+			var value = input.value.trim();
+			var discarding = input.dataset.discard;
+
+			if (value.length &amp;&amp; !discarding) {
+				this.model.update(id, { title: input.value });
+
+				// Instead of re-rendering the whole view just update
+				// this piece of it
+				label.innerHTML = value;
+			} else if (value.length === 0) {
+				// No value was entered in the input. We&#039;ll remove the todo item.
+				this.removeItem(id);
+			}
+
+			// Remove the input since we no longer need it
+			// Less DOM means faster rendering
+			li.removeChild(input);
+
+			// Remove the editing class
+			li.className = li.className.replace(&#039;editing&#039;, &#039;&#039;);
+		}.bind(this);
+
+		// Append the editing class
+		li.className = li.className + &#039; editing&#039;;
+
+		var input = document.createElement(&#039;input&#039;);
+		input.className = &#039;edit&#039;;
+
+		// Get the innerHTML of the label instead of requesting the data from the
+		// ORM. If this were a real DB this would save a lot of time and would avoid
+		// a spinner gif.
+		input.value = label.innerHTML;
+
+		li.appendChild(input);
+
+		input.addEventListener(&#039;blur&#039;, onSaveHandler);
+
+		input.addEventListener(&#039;keypress&#039;, function (e) {
+			if (e.keyCode === this.ENTER_KEY) {
+				// Remove the cursor from the input when you hit enter just like if it
+				// were a real form
+				input.blur();
+			}
+
+			if (e.keyCode === this.ESCAPE_KEY) {
+				// Discard the changes
+				input.dataset.discard = true;
+				input.blur();
+			}
+		}.bind(this));
+
+		input.focus();
+	};
+
+	/**
+	 * By giving it an ID it&#039;ll find the DOM element matching that ID,
+	 * remove it from the DOM and also remove it from storage.
+	 *
+	 * @param {number} id The ID of the item to remove from the DOM and
+	 * storage
+	 */
+	Controller.prototype.removeItem = function (id) {
+		this.model.remove(id, function () {
+			var elem = $$(&#039;[data-id=&quot;&#039; + id + &#039;&quot;]&#039;);
+
+			if (elem) {
+				this.$todoList.removeChild(elem);
+			}
+		}.bind(this));
+
+		this._filter();
+	};
+
+	/**
+	 * Will remove all completed items from the DOM and storage.
+	 */
+	Controller.prototype.removeCompletedItems = function () {
+		this.model.read({ completed: 1 }, function (data) {
+			data.forEach(function (item) {
+				this.removeItem(item.id);
+			}.bind(this));
+		}.bind(this));
+
+		this._filter();
+	};
+
+	/**
+	 * Give it an ID of a model and a checkbox and it will update the item
+	 * in storage based on the checkbox&#039;s state.
+	 *
+	 * @param {number} id The ID of the element to complete or uncomplete
+	 * @param {object} checkbox The checkbox to check the state of complete
+	 *                          or not
+	 * @param {boolean|undefined} silent Prevent re-filtering the todo items
+	 */
+	Controller.prototype.toggleComplete = function (id, checkbox, silent) {
+		var completed = checkbox.checked ? 1 : 0;
+
+		this.model.update(id, { completed: completed }, function () {
+			var listItem = $$(&#039;[data-id=&quot;&#039; + id + &#039;&quot;]&#039;);
+
+			if (!listItem) {
+				return;
+			}
+
+			listItem.className = completed ? &#039;completed&#039; : &#039;&#039;;
+
+			// In case it was toggled from an event and not by clicking the checkbox
+			listItem.querySelector(&#039;input&#039;).checked = completed;
+		});
+
+		if (!silent) {
+			this._filter();
+		}
+	};
+
+	/**
+	 * Will toggle ALL checkboxe&#039;s on/off state and completeness of models.
+	 * Just pass in the event object.
+	 *
+	 * @param {object} e The event object
+	 */
+	Controller.prototype.toggleAll = function (e) {
+		var completed = e.target.checked ? 1 : 0;
+		var query = 0;
+
+		if (completed === 0) {
+			query = 1;
+		}
+
+		this.model.read({ completed: query }, function (data) {
+			data.forEach(function (item) {
+				this.toggleComplete(item.id, e.target, true);
+			}.bind(this));
+		}.bind(this));
+
+		this._filter();
+	};
+
+	/**
+	 * Updates the pieces of the page which change depending on the remaining
+	 * number of todos.
+	 */
+	Controller.prototype._updateCount = function () {
+		var todos = this.model.getCount();
+
+		this.$todoItemCounter.innerHTML = this.view.itemCounter(todos.active);
+
+		this.$clearCompleted.innerHTML = this.view.clearCompletedButton(todos.completed);
+		this.$clearCompleted.style.display = todos.completed &gt; 0 ? &#039;block&#039; : &#039;none&#039;;
+
+		this.$toggleAll.checked = todos.completed === todos.total;
+
+		this._toggleFrame(todos);
+	};
+
+	/**
+	 * The main body and footer elements should not be visible when there are no
+	 * todos left.
+	 *
+	 * @param {object} todos Contains a count of all todos, and their statuses.
+	 */
+	Controller.prototype._toggleFrame = function (todos) {
+		var frameDisplay = this.$main.style.display;
+		var frameVisible = frameDisplay === &#039;block&#039; || frameDisplay === &#039;&#039;;
+
+		if (todos.total === 0 &amp;&amp; frameVisible) {
+			this.$main.style.display = &#039;none&#039;;
+			this.$footer.style.display = &#039;none&#039;;
+		}
+
+		if (todos.total &gt; 0 &amp;&amp; !frameVisible) {
+			this.$main.style.display = &#039;block&#039;;
+			this.$footer.style.display = &#039;block&#039;;
+		}
+	};
+
+	/**
+	 * Re-filters the todo items, based on the active route.
+	 * @param {boolean|undefined} force  forces a re-painting of todo items.
+	 */
+	Controller.prototype._filter = function (force) {
+		var activeRoute = this._activeRoute.charAt(0).toUpperCase() + this._activeRoute.substr(1);
+
+		// Update the elements on the page, which change with each completed todo
+		this._updateCount();
+
+		// If the last active route isn&#039;t &quot;All&quot;, or we&#039;re switching routes, we
+		// re-create the todo item elements, calling:
+		//   this.show[All|Active|Completed]();
+		if (force || this._lastActiveRoute !== &#039;All&#039; || this._lastActiveRoute !== activeRoute) {
+			this[&#039;show&#039; + activeRoute]();
+		}
+
+		this._lastActiveRoute = activeRoute;
+	};
+
+	/**
+	 * Simply updates the filter nav&#039;s selected states
+	 */
+	Controller.prototype._updateFilterState = function () {
+		var currentPage = this._getCurrentPage() || &#039;&#039;;
+
+		// Store a reference to the active route, allowing us to re-filter todo
+		// items as they are marked complete or incomplete.
+		this._activeRoute = currentPage;
+
+		if (currentPage === &#039;&#039;) {
+			this._activeRoute = &#039;All&#039;;
+		}
+
+		this._filter();
+
+		// Remove all other selected states. We loop through all of them in case the
+		// UI gets in a funky state with two selected.
+		$(&#039;#filters .selected&#039;).each(function (item) {
+			item.className = &#039;&#039;;
+		});
+
+		$$(&#039;#filters [href=&quot;#/&#039; + currentPage + &#039;&quot;]&#039;).className = &#039;selected&#039;;
+	};
+
+	/**
+	 * A getter for getting the current page
+	 */
+	Controller.prototype._getCurrentPage = function () {
+		return document.location.hash.split(&#039;/&#039;)[1];
+	};
+
+	// Export to window
+	window.app.Controller = Controller;
+})(window);</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ complexity.cyclomatic }} <br>
+    Length : {{ complexity.halstead.length }} <br>
+    Difficulty : {{ complexity.halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ complexity.halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome-ie7.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/jsoverson/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>vanilla/model.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"></i></a></h2>
+      <p class="stat">75.22</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h2>
+      <p class="stat">119</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty"></i></a></h2>
+      <p class="stat">25.05</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs"></i></a></h2>
+      <p class="stat">0.46</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">(function (window) {
+	&#039;use strict&#039;;
+
+	/**
+	 * Creates a new Model instance and hooks up the storage.
+	 *
+	 * @constructor
+	 * @param {object} storage A reference to the client side storage class
+	 */
+	function Model(storage) {
+		this.storage = storage;
+	}
+
+	/**
+	 * Creates a new todo model
+	 *
+	 * @param {string} [title] The title of the task
+	 * @param {function} [callback] The callback to fire after the model is created
+	 */
+	Model.prototype.create = function (title, callback) {
+		title = title || &#039;&#039;;
+		callback = callback || function () {};
+
+		var newItem = {
+			title: title.trim(),
+			completed: 0
+		};
+
+		this.storage.save(newItem, callback);
+	};
+
+	/**
+	 * Finds and returns a model in storage. If no query is given it&#039;ll simply
+	 * return everything. If you pass in a string or number it&#039;ll look that up as
+	 * the ID of the model to find. Lastly, you can pass it an object to match
+	 * against.
+	 *
+	 * @param {string|number|object} [query] A query to match models against
+	 * @param {function} [callback] The callback to fire after the model is found
+	 *
+	 * @example
+	 * model.read(1, func); // Will find the model with an ID of 1
+	 * model.read(&#039;1&#039;); // Same as above
+	 * //Below will find a model with foo equalling bar and hello equalling world.
+	 * model.read({ foo: &#039;bar&#039;, hello: &#039;world&#039; });
+	 */
+	Model.prototype.read = function (query, callback) {
+		var queryType = typeof query;
+		callback = callback || function () {};
+
+		if (queryType === &#039;function&#039;) {
+			callback = query;
+			return this.storage.findAll(callback);
+		} else if (queryType === &#039;string&#039; || queryType === &#039;number&#039;) {
+			this.storage.find({ id: query }, callback);
+		} else {
+			this.storage.find(query, callback);
+		}
+	};
+
+	/**
+	 * Updates a model by giving it an ID, data to update, and a callback to fire when
+	 * the update is complete.
+	 *
+	 * @param {number} id The id of the model to update
+	 * @param {object} data The properties to update and their new value
+	 * @param {function} callback The callback to fire when the update is complete.
+	 */
+	Model.prototype.update = function (id, data, callback) {
+		this.storage.save(id, data, callback);
+	};
+
+	/**
+	 * Removes a model from storage
+	 *
+	 * @param {number} id The ID of the model to remove
+	 * @param {function} callback The callback to fire when the removal is complete.
+	 */
+	Model.prototype.remove = function (id, callback) {
+		this.storage.remove(id, callback);
+	};
+
+	/**
+	 * WARNING: Will remove ALL data from storage.
+	 *
+	 * @param {function} callback The callback to fire when the storage is wiped.
+	 */
+	Model.prototype.removeAll = function (callback) {
+		this.storage.drop(callback);
+	};
+
+	/**
+	 * Returns a count of all todos
+	 */
+	Model.prototype.getCount = function () {
+		var todos = {
+			active: 0,
+			completed: 0,
+			total: 0
+		};
+
+		this.storage.findAll(function (data) {
+			data.each(function (todo) {
+				if (todo.completed === 1) {
+					todos.completed++;
+				} else {
+					todos.active++;
+				}
+
+				todos.total++;
+			});
+		});
+
+		return todos;
+	};
+
+	// Export to window
+	window.app.Model = Model;
+})(window);</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ complexity.cyclomatic }} <br>
+    Length : {{ complexity.halstead.length }} <br>
+    Difficulty : {{ complexity.halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ complexity.halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

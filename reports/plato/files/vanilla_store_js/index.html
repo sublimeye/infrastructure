@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <link href="../../assets/css/vendor/morris.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/bootstrap.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/font-awesome-ie7.css" rel="stylesheet">
+  <link href="../../assets/css/vendor/codemirror.css" rel="stylesheet">
+  <link href="../../assets/css/plato.css" rel="stylesheet">
+  <link href="../../assets/css/plato-file.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="navbar navbar-fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="http://github.com/jsoverson/plato">Plato on Github</a>
+    <ul class="nav navbar-nav">
+      <li>
+        <a href="../../index.html">Report Home</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <div class="container">
+    <h1>vanilla/store.js</h1>
+  </div>
+</div>
+
+<div class="container aggregate-stats">
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Maintainability <a href="http://blogs.msdn.com/b/codeanalysis/archive/2007/11/20/maintainability-index-range-and-meaning.aspx"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="A value between 0 and 100 that represents the relative ease of maintaining the code. A high value means better maintainability." data-original-title="Maintainability Index"></i></a></h2>
+      <p class="stat">68.01</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Lines of code <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h2>
+      <p class="stat">145</p>
+    </div>
+  </div>
+  <div class="row historical">
+    <div class="col-md-6">
+      <p id="chart_historical_maint" class="chart"></p>
+    </div>
+    <div class="col-md-6">
+      <p id="chart_historical_sloc" class="chart"></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2 class="header">Difficulty  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="The difficulty measure is related to the difficulty of the program to write or understand." data-original-title="Difficulty"></i></a></h2>
+      <p class="stat">59.71</p>
+    </div>
+    <div class="col-md-6">
+      <h2 class="header">Estimated Errors  <a href="http://en.wikipedia.org/wiki/Halstead_complexity_measures"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Halstead's delivered bugs is an estimate for the number of errors in the implementation." data-original-title="Delivered Bugs"></i></a></h2>
+      <p class="stat">0.85</p>
+    </div>
+  </div>
+</div>
+
+<div class="container charts">
+  <div class="row">
+    <h2 class="header">Function weight</h2>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h3 class="chart-header">By Complexity <a href="http://en.wikipedia.org/wiki/Cyclomatic_complexity"><i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="This metric counts the number of distinct paths through a block of code. Lower values are better." data-original-title="Cyclomatic Complexity"></i></a></h3>
+      <div id="fn-by-complexity" class="stat"></div>
+    </div>
+    <div class="col-md-6">
+      <h3 class="chart-header">By SLOC  <i class="icon icon-info-sign" rel="popover" data-placement="top" data-trigger="hover" data-content="Source Lines of Code / Logical Lines of Code" data-original-title="SLOC/LSLOC"></i></h3>
+      <div id="fn-by-sloc" class="stat"></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <textarea id="file-source" class="col-md-12">/*jshint eqeqeq:false */
+(function (window) {
+	&#039;use strict&#039;;
+
+	/**
+	 * Creates a new client side storage object and will create an empty
+	 * collection if no collection already exists.
+	 *
+	 * @param {string} name The name of our DB we want to use
+	 * @param {function} callback Our fake DB uses callbacks because in
+	 * real life you probably would be making AJAX calls
+	 */
+	function Store(name, callback) {
+		var data;
+		var dbName;
+
+		callback = callback || function () {};
+
+		dbName = this._dbName = name;
+
+		if (!localStorage[dbName]) {
+			data = {
+				todos: []
+			};
+
+			localStorage[dbName] = JSON.stringify(data);
+		}
+
+		callback.call(this, JSON.parse(localStorage[dbName]));
+	}
+
+	/**
+	 * Finds items based on a query given as a JS object
+	 *
+	 * @param {object} query The query to match against (i.e. {foo: &#039;bar&#039;})
+	 * @param {function} callback The callback to fire when the query has
+	 * completed running
+	 *
+	 * @example
+	 * db.find({foo: &#039;bar&#039;, hello: &#039;world&#039;}, function (data) {
+	 * // data will return any items that have foo: bar and
+	 * // hello: world in their properties
+	 * });
+	 */
+	Store.prototype.find = function (query, callback) {
+		if (!callback) {
+			return;
+		}
+
+		var todos = JSON.parse(localStorage[this._dbName]).todos;
+
+		callback.call(this, todos.filter(function (todo) {
+			var match = true;
+			for (var q in query) {
+				if (query[q] !== todo[q]) {
+					match = false;
+				}
+			}
+			return match;
+		}));
+	};
+
+	/**
+	 * Will retrieve all data from the collection
+	 *
+	 * @param {function} callback The callback to fire upon retrieving data
+	 */
+	Store.prototype.findAll = function (callback) {
+		callback = callback || function () {};
+		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
+	};
+
+	/**
+	 * Will save the given data to the DB. If no item exists it will create a new
+	 * item, otherwise it&#039;ll simply update an existing item&#039;s properties
+	 *
+	 * @param {number} id An optional param to enter an ID of an item to update
+	 * @param {object} data The data to save back into the DB
+	 * @param {function} callback The callback to fire after saving
+	 */
+	Store.prototype.save = function (id, updateData, callback) {
+		var data = JSON.parse(localStorage[this._dbName]);
+		var todos = data.todos;
+
+		callback = callback || function () {};
+
+		// If an ID was actually given, find the item and update each property
+		if (typeof id !== &#039;object&#039;) {
+			for (var i = 0; i &lt; todos.length; i++) {
+				if (todos[i].id == id) {
+					for (var x in updateData) {
+						todos[i][x] = updateData[x];
+					}
+				}
+			}
+
+			localStorage[this._dbName] = JSON.stringify(data);
+			callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
+		} else {
+			callback = updateData;
+
+			updateData = id;
+
+			// Generate an ID
+			updateData.id = new Date().getTime();
+
+			todos.push(updateData);
+			localStorage[this._dbName] = JSON.stringify(data);
+			callback.call(this, [updateData]);
+		}
+	};
+
+	/**
+	 * Will remove an item from the Store based on its ID
+	 *
+	 * @param {number} id The ID of the item you want to remove
+	 * @param {function} callback The callback to fire after saving
+	 */
+	Store.prototype.remove = function (id, callback) {
+		var data = JSON.parse(localStorage[this._dbName]);
+		var todos = data.todos;
+
+		for (var i = 0; i &lt; todos.length; i++) {
+			if (todos[i].id == id) {
+				todos.splice(i, 1);
+				break;
+			}
+		}
+
+		localStorage[this._dbName] = JSON.stringify(data);
+		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
+	};
+
+	/**
+	 * Will drop all storage and start fresh
+	 *
+	 * @param {function} callback The callback to fire after dropping the data
+	 */
+	Store.prototype.drop = function (callback) {
+		localStorage[this._dbName] = JSON.stringify({todos: []});
+		callback.call(this, JSON.parse(localStorage[this._dbName]).todos);
+	};
+
+	// Export to window
+	window.app.Store = Store;
+})(window);</textarea>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <p>.</p>
+  </div>
+</footer>
+
+<script type="text/html" id="complexity-popover-template">
+  <div class="complexity-notice">
+    Complexity : {{ complexity.cyclomatic }} <br>
+    Length : {{ complexity.halstead.length }} <br>
+    Difficulty : {{ complexity.halstead.difficulty.toFixed(2) }} <br>
+    Est # bugs : {{ complexity.halstead.bugs.toFixed(2) }}<br>
+  </div>
+</script>
+
+<script type="text/javascript" src="../../assets/scripts/bundles/core-bundle.js"></script>
+<script type="text/javascript" src="../../assets/scripts/bundles/codemirror.js"></script>
+<script type="text/javascript" src="../../assets/scripts/codemirror.markpopovertext.js"></script>
+<script type="text/javascript" src="report.js"></script>
+<script type="text/javascript" src="report.history.js"></script>
+<script type="text/javascript" src="../../assets/scripts/plato-file.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<testsuites>
+  <testsuite name="PhantomJS 1.9.2 (Windows 7)" package="" timestamp="2013-11-14T13:26:10" id="0" hostname="NB-romo1" tests="6" errors="0" failures="0" time="0.002">
+    <properties>
+      <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.2 Safari/534.34"/>
+    </properties>
+    <testcase name="Should have property model and view" time="0.001" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <testcase name="ENTER_KEY should be equal 13" time="0.001" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <testcase name="ESCAPE_KEY should be equal 27" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <testcase name="Should have getCurrentPage method" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <testcase name="Get current page should return empty string for no url set" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <testcase name="Should have prototype function" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <system-out><![CDATA[
+]]></system-out>
+    <system-err/>
+  </testsuite>
+</testsuites>

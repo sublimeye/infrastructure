@@ -4,11 +4,11 @@
 		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	for (var i = 0; i &lt; arguments.length; i++) {" severity="E" />
 		<issue line="6" char="29" reason="Mixed double and single quotes." evidence="		say: &quot;Hello in auth&quot;" severity="W" />
 		<issue line="7" char="6" reason="Missing semicolon." evidence="	}" severity="W" />
-		<issue line="1" char="85" reason="&apos;math&apos; is defined but never used." evidence="define([&apos;ui&apos;, &apos;calc&apos;, &apos;console&apos;, &apos;docs&apos;, &apos;math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
-		<issue line="1" char="79" reason="&apos;docs&apos; is defined but never used." evidence="define([&apos;ui&apos;, &apos;calc&apos;, &apos;console&apos;, &apos;docs&apos;, &apos;math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
-		<issue line="1" char="73" reason="&apos;con&apos; is defined but never used." evidence="define([&apos;ui&apos;, &apos;calc&apos;, &apos;console&apos;, &apos;docs&apos;, &apos;math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
-		<issue line="1" char="68" reason="&apos;calc&apos; is defined but never used." evidence="define([&apos;ui&apos;, &apos;calc&apos;, &apos;console&apos;, &apos;docs&apos;, &apos;math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
-		<issue line="1" char="62" reason="&apos;ui&apos; is defined but never used." evidence="define([&apos;ui&apos;, &apos;calc&apos;, &apos;console&apos;, &apos;docs&apos;, &apos;math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="95" reason="&apos;math&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="89" reason="&apos;docs&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="83" reason="&apos;con&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="78" reason="&apos;calc&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="72" reason="&apos;ui&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
 	</file>
 	<file name="src/js/app/libs/calc.js">
 		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	return {" severity="E" />

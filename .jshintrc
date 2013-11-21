@@ -1,0 +1,35 @@
+{
+
+	"globals": {
+		"console": false,
+		"document": false,
+		"window": false,
+        "define": false,
+		"localStorage": false
+	}, /* is it better to leave these globals to setup in each file? */
+  /* Enforcing options */
+    "curly": true, /* This option requires you to always put curly braces around blocks in loops and conditionals.  */
+    "eqeqeq": true, /* This options prohibits the use of == and != in favor of === and !==. */
+    "newcap": true, /* This option requires you to capitalize names of constructor functions.  */
+    "noarg": true, /*  This option prohibits the use of arguments.caller and arguments.callee. usless if enforcing "use strict"; */
+    "latedef": true, /* This option prohibits the use of a variable before it was defined. */
+    "trailing": true, /* This option makes it an error to leave a trailing whitespace in your code. */
+    "undef": true, /* This option prohibits the use of explicitly undeclared variables */
+    "unused": true, /* This option warns when you define and never use your variables. */
+    "strict": true, /* This option requires all functions to run in ECMAScript 5's strict mode. It will break 90% of functions. Though it can be fixed really fast. */
+    "quotmark": true, /* This option enforces the consistency of quotation marks used throughout your code. true if you don't want to enforce one particular style but want some consistency */
+    /* govno-detect */
+    "maxparams": 5, /* discuss */ /* This option lets you set the max number of formal parameters allowed per function */
+    "maxdepth": 4, /* discuss */ /* This option lets you control how nested do you want your blocks to be */
+    "maxstatements": 25, /* discuss */ /* This option lets you set the max number of statements allowed per function */
+    "maxcomplexity": 10, /* discuss */ /* This option lets you control cyclomatic complexity throughout your code. */
+
+  /* Relaxing options */
+    "eqnull": true, /* This option suppresses warnings about == null comparisons. */
+    "expr": true, /* This option suppresses warnings about the use of expressions where normally you would expect to see assignments or function calls.function */
+
+  /* Environments */
+    "node": true /* This option defines globals available when your code is running inside of the Node runtime environment.  */
+
+    /*"onevar": true,*/  /* I don't like it. (c) romo; This option allows only one var statement per function. */
+}

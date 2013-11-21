@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<jslint>
+<file name="src/js/app/libs/auth.js">
+  
+</file>
+<file name="src/js/app/libs/calc.js">
+  
+</file>
+<file name="src/js/app/libs/console.js">
+  
+</file>
+<file name="src/js/app/libs/docs.js">
+  
+</file>
+<file name="src/js/app/libs/math.js">
+  
+</file>
+<file name="src/js/app/libs/ui.js">
+  
+</file>
+<file name="src/js/app/vanilla/app.js">
+  
+</file>
+<file name="src/js/app/vanilla/controller.js">
+  
+</file>
+<file name="src/js/app/vanilla/helpers.js">
+  
+</file>
+<file name="src/js/app/vanilla/model.js">
+  
+  <issue
+    line="48"
+    char="&lt;anonymous&gt;.read"
+    evidence="&lt;anonymous&gt;.read is too complicated"
+    reason="Cyclomatic: 3,
+    Halstead: 16.792
+    | Effort: 4522.7
+    | Volume: 269.34
+    | Vocabulary: 25" />
+  
+</file>
+<file name="src/js/app/vanilla/store.js">
+  
+  <issue
+    line="15"
+    char="Store"
+    evidence="Store is too complicated"
+    reason="Cyclomatic: 2,
+    Halstead: 12.269
+    | Effort: 2981.5
+    | Volume: 243.00
+    | Vocabulary: 24" />
+  
+  <issue
+    line="83"
+    char="&lt;anonymous&gt;.save"
+    evidence="&lt;anonymous&gt;.save is too complicated"
+    reason="Cyclomatic: 4,
+    Halstead: 28.738
+    | Effort: 19908
+    | Volume: 692.73
+    | Vocabulary: 38" />
+  
+  <issue
+    line="121"
+    char="&lt;anonymous&gt;.remove"
+    evidence="&lt;anonymous&gt;.remove is too complicated"
+    reason="Cyclomatic: 3,
+    Halstead: 12.500
+    | Effort: 4347.9
+    | Volume: 347.83
+    | Vocabulary: 26" />
+  
+</file>
+<file name="src/js/app/vanilla/view.js">
+  
+  <issue
+    line="39"
+    char="&lt;anonymous&gt;.show"
+    evidence="&lt;anonymous&gt;.show is too complicated"
+    reason="Cyclomatic: 3,
+    Halstead: 14.000
+    | Effort: 6850.3
+    | Volume: 489.31
+    | Vocabulary: 33" />
+  
+</file>
+<file name="src/js/index.js">
+  
+</file>
+<file name="src/js/require.conf.js">
+  
+</file>
+</jslint>

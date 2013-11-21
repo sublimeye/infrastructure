@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jslint>
+	<file name="src/js/app/libs/auth.js">
+		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	for (var i = 0; i &lt; arguments.length; i++) {" severity="E" />
+		<issue line="6" char="29" reason="Mixed double and single quotes." evidence="		say: &quot;Hello in auth&quot;" severity="W" />
+		<issue line="7" char="6" reason="Missing semicolon." evidence="	}" severity="W" />
+		<issue line="1" char="95" reason="&apos;math&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="89" reason="&apos;docs&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="83" reason="&apos;con&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="78" reason="&apos;calc&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+		<issue line="1" char="72" reason="&apos;ui&apos; is defined but never used." evidence="define([&apos;./ui&apos;, &apos;./calc&apos;, &apos;./console&apos;, &apos;./docs&apos;, &apos;./math&apos;], function(ui, calc, con, docs, math) {" severity="W" />
+	</file>
+	<file name="src/js/app/libs/calc.js">
+		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	return {" severity="E" />
+		<issue line="5" char="6" reason="Missing semicolon." evidence="	}" severity="W" />
+	</file>
+	<file name="src/js/app/libs/console.js">
+		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	return {" severity="E" />
+		<issue line="6" char="6" reason="Missing semicolon." evidence="	}" severity="W" />
+	</file>
+	<file name="src/js/app/libs/docs.js">
+		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	return {" severity="E" />
+		<issue line="5" char="6" reason="Missing semicolon." evidence="	}" severity="W" />
+	</file>
+	<file name="src/js/app/libs/math.js">
+		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	return {" severity="E" />
+		<issue line="6" char="6" reason="Missing semicolon." evidence="	}" severity="W" />
+	</file>
+	<file name="src/js/app/libs/ui.js">
+		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	return {" severity="E" />
+		<issue line="5" char="6" reason="Missing semicolon." evidence="	}" severity="W" />
+	</file>
+	<file name="src/js/app/vanilla/controller.js">
+		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	return (function (window) {" severity="E" />
+		<issue line="1" char="24" reason="&apos;require&apos; is defined but never used." evidence="define(function(require) {" severity="W" />
+		<issue line="2" char="29" reason="&apos;window&apos; is defined but never used." evidence="	return (function (window) {" severity="W" />
+	</file>
+	<file name="src/js/index.js">
+		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	console.log(auth.say + &apos;do it!&apos;);" severity="E" />
+	</file>
+	<file name="src/js/require.conf.js">
+		<issue line="11" char="4" reason="Mixed spaces and tabs." evidence="    	&apos;model&apos;: {" severity="W" />
+		<issue line="12" char="4" reason="Mixed spaces and tabs." evidence="    		exports: &quot;model&quot;" severity="W" />
+		<issue line="12" char="29" reason="Mixed double and single quotes." evidence="    		exports: &quot;model&quot;" severity="W" />
+		<issue line="13" char="4" reason="Mixed spaces and tabs." evidence="    	}" severity="W" />
+	</file>
+</jslint>

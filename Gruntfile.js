@@ -1,5 +1,8 @@
 module.exports = function (grunt) {
 
+	// Displays the elapsed execution time of grunt tasks when done
+	require('time-grunt')(grunt);
+
 	/**
 	 * Load all grunt-* tasks from the package.json
 	 */
@@ -25,7 +28,7 @@ module.exports = function (grunt) {
 		styles: ['<%=stylesDir%>/**/*.*'],
 		stylesCompiled: [ '<%= stylesCompiledDir %>/*.css'],
 
-		userScripts: ['<%=scriptsDir%>/app/**/*.js', '<%=scriptsDir%>/*.js'],
+		userScripts: ['<%=scriptsDir%>/app/**/*.js', '!<%=scriptsDir%>/vendor/**/*.js'],
 		scriptsCompiled: ['<%=compiledDir%>/**/*.js'],
 
 		testBase: ['<%=testsDir%>', '<%=srcDir%>'],
@@ -50,7 +53,7 @@ module.exports = function (grunt) {
 			options: {
 				force: true,
 				jshintrc: '.jshintrc',
-				reporter: 'jslint',
+				reporter: 'checkstyle',
 				reporterOutput: '<%=reportsDir%>/report-jshint.xml'
 			}
 		},
@@ -252,15 +255,25 @@ module.exports = function (grunt) {
 		/* Reloads dashboard page */
 		'watch'
 	]);
-	grunt.registerTask('default', ['work']);
+	grunt.registerTask('default', function() {
+		grunt.log.writeln('Default task is the same as "grunt work" task');
+		grunt.task.run('work');
+	}['work']);
 
 	grunt.registerTask('build:prod', 'Compile, compress, get metrics. Used by CI and dev', [
 		'_critical:prod',
 		'_compile:prod',
+
+		'force:on',
 		'_metrics:prod',
-		'_test:prod'
+		'_test:prod',
+		'force:restore'
 	]);
 
+	/**
+	 * @private
+	 * Helper grunt tasks (used by @public main grunt tasks)
+	 */
 	grunt.registerTask('_critical:prod', 'Run critical issues checker', [
 		'jsvalidate'
 	]);
@@ -271,25 +284,16 @@ module.exports = function (grunt) {
 	]);
 
 	grunt.registerTask('_metrics:prod', 'run all possible metrics and generate reports', [
-		'force:on',
 		'sloc',
 		'jshint',
 		'csslint:prod',
 		'complexity',
-		'plato',
-		'force:off'
+		'plato'
 	]);
 
 	grunt.registerTask('_test:prod', 'run all possible metrics and generate reports', [
-		'force:on',
-		'karma:prod',
-		'force:off'
+		'karma:prod'
 	]);
-
-/*
-	grunt.registerTask('build:dev', 'Compile, compress, run metrics', [
-	]);
-*/
 
 	grunt.initConfig(config);
 

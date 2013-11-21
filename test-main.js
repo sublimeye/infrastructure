@@ -7,11 +7,6 @@ for (var file in window.__karma__.files) {
   }
 }
 
-tests.forEach(function(v) {
-	console.log('CONSOLE: ', v);
-});
-
-
 requirejs.config({
     baseUrl: '/base/src/js/',
 

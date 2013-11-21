@@ -3,11 +3,6 @@ module.exports = function (grunt) {
 	// Displays the elapsed execution time of grunt tasks when done
 	require('time-grunt')(grunt);
 
-	/**
-	 * Load all grunt-* tasks from the package.json
-	 */
-	require('load-grunt-tasks')(grunt, {pattern: 'grunt-*'});
-
 	var config = {
 		pgk: grunt.file.readJSON('package.json'),
 
@@ -31,7 +26,7 @@ module.exports = function (grunt) {
 		userScripts: ['<%=scriptsDir%>/app/**/*.js', '!<%=scriptsDir%>/vendor/**/*.js'],
 		scriptsCompiled: ['<%=compiledDir%>/**/*.js'],
 
-		testBase: ['<%=testsDir%>', '<%=srcDir%>'],
+//		testBase: ['<%=testsDir%>', '<%=srcDir%>'],
 
 		/* Metrics configuration */
 		jsvalidate: {
@@ -174,25 +169,42 @@ module.exports = function (grunt) {
 		/* Server , tests automation */
 		karma: {
 			options: {
-				configFile: 'karma.conf.js'
-				// frameworks: ['mocha', 'requirejs', 'chai'],
-				// files: [
-				// 	{pattern: 'src/js/**/*.js', included: false},
-				// 	{pattern: 'test/js/**/*.js', included: false},
-				// 	'test-main.js'
-				// 	],
-				// exclude: ['src/js/index.js'],
-				// reporters: ['dots'],
-				// browsers: ['Chrome'],
-				// runnerPort: 9876,
+				reportSlowerThan: 0,
+				runnerPort: 9999,
+				port: 9988,
+
+				basePath: './',
+				frameworks: ['mocha', 'requirejs', 'chai'],
+				files: [
+					'test-main.js',
+					{pattern: 'src/js/**/*.js', included: false},
+					{pattern: 'test/js/**/*.js', included: false}
+				],
+				exclude: ['src/js/index.js'],
+				junitReporter: {
+					outputFile: '<%=reportsDir%>/report-test-results.xml'
+				},
+				preprocessors: {
+				/*source files, that you wanna generate coverage for do not include tests or libraries (these files will be instrumented by Istanbul)*/
+					'src/js/app/**/*.js': ['coverage']
+				},
+				coverageReporter: {
+					type : ['cobertura'],
+					dir : '<%=reportsDir%>/test-coverage/'
+				}
 			},
 			unit: {
-				browsers: ['Chrome'],
+				reporters: ['progress'],
+				browsers: ['PhantomJS'],
+				logLevel: 'WARN',
 				background: true
 			},
 			prod: {
+				reporters: ['dots', 'coverage', 'junit'],
 				browsers: ['PhantomJS'],
+				logLevel: 'ERROR',
 				singleRun: true,
+				captureTimeout: 30000,
 				force: true
 			}
 		},
@@ -217,8 +229,8 @@ module.exports = function (grunt) {
 				path: 'http://localhost:<%= express.all.options.port %>'
 			}
 		},
-		/* Watcher */
 
+		/* Watcher */
 		watch: {
 			scripts: {
 				files: '<%= userScripts %>'
@@ -230,7 +242,8 @@ module.exports = function (grunt) {
 			},
 
 			options: {
-				debouceDelay: 200,
+				debounceDelay: 200,
+//				atBegin: true,
 				livereload: true
 			},
 
@@ -322,5 +335,10 @@ module.exports = function (grunt) {
 			grunt.option("force", previous_force_state);
 		}
 	});
+
+	/**
+	 * Load all grunt-* tasks from the package.json
+	 */
+	require('load-grunt-tasks')(grunt, {pattern: 'grunt-*'});
 
 };

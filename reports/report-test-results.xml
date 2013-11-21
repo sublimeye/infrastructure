@@ -1,39 +1,20 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="PhantomJS 1.9.2 (Windows 7)" package="" timestamp="2013-11-21T00:24:19" id="0" hostname="NB-romo1" tests="10" errors="0" failures="1" time="0">
+  <testsuite name="PhantomJS 1.9.2 (Windows 7)" package="undefined" timestamp="2013-11-21T20:00:35" id="0" hostname="NB-romo1" tests="10" errors="0" failures="0" time="0.001">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.2 Safari/534.34"/>
     </properties>
+    <testcase name="Model should have a window" time="0" classname="PhantomJS 1.9.2 (Windows 7).App Model Test Suite Basic behavior"/>
+    <testcase name="Model: 15 == 15" time="0" classname="PhantomJS 1.9.2 (Windows 7).App Model Test Suite Basic behavior"/>
     <testcase name="Should have property model and view" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
-    <testcase name="ENTER_KEY should be equal 13" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
+    <testcase name="ENTER_KEY should be equal 13" time="0.001" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="ESCAPE_KEY should be equal 27" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="Should have getCurrentPage method" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="Get current page should return empty string for no url set" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="Should have prototype function" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="I love testing" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="Gobo go" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
-    <testcase name="Have window" time="0" classname="PhantomJS 1.9.2 (Windows 7).Model Sample Model">
-      <failure type="">AssertionError: 10 yes
-    at d:/web/infrastructure_9_karma/node_modules/karma-chai/node_modules/chai/chai.js:918
-    at d:/web/infrastructure_9_karma/node_modules/karma-chai/node_modules/chai/chai.js:2254
-    at d:/web/infrastructure_9_karma/test/js/model.test.js:13
-    at d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4263
-    at d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4635
-    at d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4694
-    at next (d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4561)
-    at d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4570
-    at next (d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4514)
-    at d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4538
-    at timeslice (d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:5531)
-</failure>
-    </testcase>
-    <testcase name="Model: 15 == 15" time="0" classname="PhantomJS 1.9.2 (Windows 7).Model Sample Model"/>
-    <system-out><![CDATA[PhantomJS 1.9.2 (Windows 7) LOG: LOG
- 'CONSOLE: ', '/base/test/js/controller.test.js',PhantomJS 1.9.2 (Windows 7) LOG: LOG
- 'CONSOLE: ', '/base/test/js/model.test.js',PhantomJS 1.9.2 (Windows 7) LOG: LOG
- 'CONSOLE: ', '/base/test/js/store.test.js',PhantomJS 1.9.2 (Windows 7) LOG: LOG
- 'CONSOLE: ', '/base/test/js/view.test.js',PhantomJS 1.9.2 (Windows 7) LOG: LOG
- 'CONSOLE: ', '/base/test/js/xport.test.js'
+    <system-out><![CDATA[
 ]]></system-out>
     <system-err/>
   </testsuite>

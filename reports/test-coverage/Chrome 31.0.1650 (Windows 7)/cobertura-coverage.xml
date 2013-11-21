@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="93"  lines-covered="26"  line-rate="0.2796"  branches-valid="28"  branches-covered="3"  branch-rate="0.10710000000000001"  timestamp="1384993291528" complexity="0" version="0.1">
+<coverage lines-valid="93"  lines-covered="26"  line-rate="0.2796"  branches-valid="28"  branches-covered="3"  branch-rate="0.10710000000000001"  timestamp="1385061912591" complexity="0" version="0.1">
 <sources>
 	<source>d:\web\infrastructure_9_karma</source>
 </sources>

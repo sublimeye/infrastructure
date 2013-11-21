@@ -35,13 +35,4 @@
 		<issue line="1" char="24" reason="&apos;require&apos; is defined but never used." evidence="define(function(require) {" severity="W" />
 		<issue line="2" char="29" reason="&apos;window&apos; is defined but never used." evidence="	return (function (window) {" severity="W" />
 	</file>
-	<file name="src/js/index.js">
-		<issue line="2" char="5" reason="Missing &quot;use strict&quot; statement." evidence="	console.log(auth.say + &apos;do it!&apos;);" severity="E" />
-	</file>
-	<file name="src/js/require.conf.js">
-		<issue line="11" char="4" reason="Mixed spaces and tabs." evidence="    	&apos;model&apos;: {" severity="W" />
-		<issue line="12" char="4" reason="Mixed spaces and tabs." evidence="    		exports: &quot;model&quot;" severity="W" />
-		<issue line="12" char="29" reason="Mixed double and single quotes." evidence="    		exports: &quot;model&quot;" severity="W" />
-		<issue line="13" char="4" reason="Mixed spaces and tabs." evidence="    	}" severity="W" />
-	</file>
 </jslint>

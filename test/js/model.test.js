@@ -1,16 +1,14 @@
 define(function (require) {
 	var Controller = require('vanilla/controller');
 
-	describe('Model', function () {
+	describe('App Model Test Suite', function () {
 
 
-		describe('Sample Model', function () {
+		describe('Basic behavior', function () {
 			var m = window.app;
 
-
-			it('Have window', function () {
-				debugger;
-				assert(1 == window.app, '10 yes');
+			it('Model should have a window', function () {
+				assert(12 == 1, '10 yes');
 			});
 
 			it('Model: 15 == 15', function () {

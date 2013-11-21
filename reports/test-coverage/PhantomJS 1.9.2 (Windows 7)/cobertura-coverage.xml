@@ -1,6 +1,6 @@
 <?xml version="1.0" ?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
-<coverage lines-valid="93"  lines-covered="26"  line-rate="0.2796"  branches-valid="28"  branches-covered="3"  branch-rate="0.10710000000000001"  timestamp="1384993459764" complexity="0" version="0.1">
+<coverage lines-valid="93"  lines-covered="26"  line-rate="0.2796"  branches-valid="28"  branches-covered="3"  branch-rate="0.10710000000000001"  timestamp="1385064035399" complexity="0" version="0.1">
 <sources>
 	<source>d:\web\infrastructure_9_karma</source>
 </sources>
@@ -36,7 +36,7 @@
 			<line number="29"  hits="1"  branch="false" />
 		</lines>
 		</class>
-		<class name="store.js"  filename="./src/js/app/vanilla/store.js"  line-rate="0.16670000000000001"  branch-rate="0.05" >
+		<class name="store.js"  filename="./src/js/app/vanilla/store.js"  line-rate="0.16670000000000001"  branch-rate="0.1" >
 		<methods>
 			<method name="(anonymous_1)"  hits="1"  signature="()V" >
 				<lines><line number="4"  hits="1" /></lines>
@@ -73,7 +73,7 @@
 			</method>
 		</methods>
 		<lines>
-			<line number="1"  hits="1"  branch="true"  condition-coverage="50% (1/2)" />
+			<line number="1"  hits="1"  branch="true"  condition-coverage="100% (2/2)" />
 			<line number="4"  hits="1"  branch="false" />
 			<line number="15"  hits="1"  branch="false" />
 			<line number="16"  hits="0"  branch="false" />
@@ -129,7 +129,7 @@
 			<line number="147"  hits="1"  branch="false" />
 		</lines>
 		</class>
-		<class name="view.js"  filename="./src/js/app/vanilla/view.js"  line-rate="0.25"  branch-rate="0.25" >
+		<class name="view.js"  filename="./src/js/app/vanilla/view.js"  line-rate="0.25"  branch-rate="0.125" >
 		<methods>
 			<method name="(anonymous_1)"  hits="1"  signature="()V" >
 				<lines><line number="3"  hits="1" /></lines>
@@ -148,7 +148,7 @@
 			</method>
 		</methods>
 		<lines>
-			<line number="1"  hits="1"  branch="true"  condition-coverage="100% (2/2)" />
+			<line number="1"  hits="1"  branch="true"  condition-coverage="50% (1/2)" />
 			<line number="3"  hits="1"  branch="false" />
 			<line number="11"  hits="1"  branch="false" />
 			<line number="12"  hits="0"  branch="false" />

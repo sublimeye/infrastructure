@@ -47,7 +47,7 @@ module.exports = function (grunt) {
 			},
 			options: {
 				force: true,
-				jshintrc: 'jshint.json',
+				jshintrc: '.jshintrc',
 				reporter: require('jshint-jenkins-checkstyle-reporter'),
 				reporterOutput: '<%=reportsDir%>/report-jshint.xml'
 			}
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
 		},
 		plato: {
 			options: {
-				jshint: grunt.file.readJSON('jshint.json')
+				jshint: grunt.file.readJSON('.jshintrc')
 			},
 			metrix: {
 				files: {

@@ -23,7 +23,7 @@ module.exports = function (grunt) {
 		styles: ['<%=stylesDir%>/**/*.*'],
 		stylesCompiled: [ '<%= stylesCompiledDir %>/*.css'],
 
-		userScripts: ['<%=scriptsDir%>/app/**/*.js', '!<%=scriptsDir%>/vendor/**/*.js'],
+		userScripts: ['<%=scriptsDir%>/app/**/*.js', '<%=scriptsDir%>/index.js', '!<%=scriptsDir%>/vendor/**/*.js'],
 		scriptsCompiled: ['<%=compiledDir%>/**/*.js'],
 
 //		testBase: ['<%=testsDir%>', '<%=srcDir%>'],
@@ -49,6 +49,7 @@ module.exports = function (grunt) {
 				force: true,
 				jshintrc: '.jshintrc',
 				reporter: 'checkstyle',
+//				reporter: require(''),
 				reporterOutput: '<%=reportsDir%>/report-jshint.xml'
 			}
 		},
@@ -96,7 +97,7 @@ module.exports = function (grunt) {
 		},
 		plato: {
 			options: {
-				jshint: false
+//				jshint: false
 			},
 			metrix: {
 				files: {

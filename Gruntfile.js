@@ -48,7 +48,7 @@ module.exports = function (grunt) {
 			options: {
 				force: true,
 				jshintrc: '.jshintrc',
-				reporter: require('jshint-jenkins-violations-reporter'),
+				reporter: require('jshint-jenkins-checkstyle-reporter'),
 //				reporter: 'checkstyle',
 				reporterOutput: '<%=reportsDir%>/report-jshint.xml'
 			}

@@ -49,6 +49,7 @@ module.exports = function (grunt) {
 				force: true,
 				jshintrc: '.jshintrc',
 				reporter: require('jshint-jenkins-violations-reporter'),
+//				reporter: 'checkstyle',
 				reporterOutput: '<%=reportsDir%>/report-jshint.xml'
 			}
 		},
@@ -57,10 +58,9 @@ module.exports = function (grunt) {
 				src: '<%= stylesCompiled %>',
 				options: {
 					csslintrc: '.csslintrc',
-					absoluteFilePathsForFormatters: true,
 					formatters: [
-						{id: 'lint-xml', dest: '<%=reportsDir%>/report-csslint.xml'}
-					]
+					{id: 'lint-xml', dest: '<%=reportsDir%>/report-csslint.xml'}
+				]
 				}
 			},
 			dev: {

@@ -48,9 +48,8 @@ module.exports = function (grunt) {
 			options: {
 				force: true,
 				jshintrc: '.jshintrc',
-				reporter: require('jshint-jenkins-violations-reporter')
-//				reporter: require(''),
-//				reporterOutput: '<%=reportsDir%>/report-jshint.xml'
+				reporter: require('jshint-jenkins-violations-reporter'),
+				reporterOutput: '<%=reportsDir%>/report-jshint.xml'
 			}
 		},
 		csslint: {

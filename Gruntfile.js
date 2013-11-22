@@ -186,7 +186,7 @@ module.exports = function (grunt) {
 				},
 				preprocessors: {
 				/*source files, that you wanna generate coverage for do not include tests or libraries (these files will be instrumented by Istanbul)*/
-					'src/js/app/**/*.js': ['coverage']
+					'src/js/app/**': ['coverage']
 				},
 				coverageReporter: {
 					type : ['cobertura'],

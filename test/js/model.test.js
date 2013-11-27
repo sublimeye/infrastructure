@@ -1,5 +1,5 @@
 define(function (require) {
-	var Controller = require('vanilla/controller');
+	var Controller = require('vanilla/model');
 
 	describe('App Model Test Suite', function () {
 

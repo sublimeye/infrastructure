@@ -178,7 +178,9 @@ module.exports = function (grunt) {
 				files: [
 					'test-main.js',
 					{pattern: 'src/js/**/*.js', included: false},
-					{pattern: 'test/js/**/*.js', included: false}
+					{pattern: 'test/js/**/*.js', included: false},
+					{pattern: 'src/js/index.js', included: false}
+
 				],
 				exclude: ['src/js/index.js'],
 				junitReporter: {
@@ -186,11 +188,15 @@ module.exports = function (grunt) {
 				},
 				preprocessors: {
 				/*source files, that you wanna generate coverage for do not include tests or libraries (these files will be instrumented by Istanbul)*/
-					'src/js/app/**': ['coverage']
+					'src/js/app/**/*.js': ['coverage'],
+					'src/js/app/libs/*.js': ['coverage'],
+					'src/js/index.js': ['coverage']
+					// 'src/js/index.js': ['coverage']
+					// 'src/js/app/vanilla/*.js': ['coverage']
 				},
 				coverageReporter: {
-					type : ['cobertura'],
-					dir : '<%=reportsDir%>/test-coverage/'
+					type : ['html'],
+					dir : '<%=reportsDir%>/test-coverage/cob/'
 				}
 			},
 			unit: {
@@ -200,7 +206,7 @@ module.exports = function (grunt) {
 				background: true
 			},
 			prod: {
-				reporters: ['dots', 'coverage', 'junit'],
+				reporters: ['progress', 'coverage', 'junit'],
 				browsers: ['PhantomJS'],
 				logLevel: 'ERROR',
 				singleRun: true,
@@ -283,9 +289,11 @@ module.exports = function (grunt) {
 		'force:restore'
 	]);
 
+	grunt.registerTask('precommit', ['_critical:prod']);
+
 	/**
 	 * @private
-	 * Helper grunt tasks (used by @public main grunt tasks)
+	 * Helper grunt tasks d by @public main grunt tasks)
 	 */
 	grunt.registerTask('_critical:prod', 'Run critical issues checker', [
 		'jsvalidate'

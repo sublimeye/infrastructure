@@ -1,11 +1,6 @@
-var tests = [];
-for (var file in window.__karma__.files) {
-  if (/test\.js$/.test(file)) {
-    // Convert url of file to its module id.
-    // var filename = file.replace(/^\/base/, '../..').replace(/\.js$/, '');
-    tests.push(file);
-  }
-}
+var tests = Object.keys(window.__karma__.files).filter(function (file) {
+    return /test\.js$/.test(file);
+});
 
 requirejs.config({
     baseUrl: '/base/src/js/',
@@ -14,7 +9,8 @@ requirejs.config({
         'jquery': 'src/js/vendor/jquery',
         'underscore': 'src/js/vendor/underscore',
         'app': 'app',
-        'vanilla': 'app/vanilla'
+        'vanilla': 'app/vanilla',
+        'libs': 'app/libs'
     },
 
     shim: {

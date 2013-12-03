@@ -28,9 +28,9 @@
     "karma-chai": "0.0.2",
     "karma-coverage": "~0.1.2",
     "karma-junit-reporter": "~0.1.0",
+    "jshint-jenkins-checkstyle-reporter": "~0.1.0",
     "time-grunt": "~0.2.2",
     "grunt-express": "~1.2.1",
-    "grunt-open": "~0.2.2",
-    "jshint-jenkins-checkstyle-reporter": "~0.1.0"
+    "grunt-open": "~0.2.2"
   }
 }

@@ -81,7 +81,7 @@ module.exports = function (grunt) {
 					maintainability: 100
 				}
 			}
-		}
+		},
 		plato: {
 			options: {
 				jshint: grunt.file.readJSON('.jshintrc')

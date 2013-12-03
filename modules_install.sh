@@ -9,6 +9,8 @@ npm install -g grunt-plato
 npm install -g grunt-contrib-watch
 npm install -g grunt-contrib-compass
 npm install -g grunt-contrib-requirejs
+
+npm install -g karma
 npm install -g grunt-karma
 npm install -g grunt-jsvalidate
 npm install -g grunt-complexity

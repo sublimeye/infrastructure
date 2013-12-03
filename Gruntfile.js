@@ -81,19 +81,7 @@ module.exports = function (grunt) {
 					maintainability: 100
 				}
 			}
-		},
-		sloc: {
-			metrix: {
-				options: {
-					reportType: 'json',
-					reportPath: '<%=reportsDir%>/report-sloc.json',
-					tolerant: true
-				},
-				files: {
-					'./': '<%=userScripts%>'
-				}
-			}
-		},
+		}
 		plato: {
 			options: {
 				jshint: grunt.file.readJSON('.jshintrc')
@@ -289,7 +277,7 @@ module.exports = function (grunt) {
 		'force:restore'
 	]);
 
-	grunt.registerTask('precommit', ['_critical:prod']);
+	grunt.registerTask('commit:check', 'Pre commit hook', ['jsvalidate']);
 
 	/**
 	 * @private

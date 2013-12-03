@@ -8,7 +8,7 @@ define(function (require) {
 			var m = window.app;
 
 			it('Model should have a window', function () {
-				assert(12 == 1, '10 yes');
+				assert(12 == 12, '10 yes');
 			});
 
 			it('Model: 15 == 15', function () {

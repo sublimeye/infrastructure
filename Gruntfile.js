@@ -26,7 +26,11 @@ module.exports = function (grunt) {
 		userScripts: ['<%=scriptsDir%>/app/**/*.js', '<%=scriptsDir%>/index.js', '!<%=scriptsDir%>/vendor/**/*.js'],
 		scriptsCompiled: ['<%=compiledDir%>/**/*.js'],
 
-//		testBase: ['<%=testsDir%>', '<%=srcDir%>'],
+		scriptsStringApp: '<%=scriptsDir%>/app/**/*.js',
+		scriptsStringIndex: '<%=scriptsDir%>/index.js',
+		scriptsStringTests: 'test/app/**/*.js',
+
+		testsConfiguration: 'test/config.js',
 
 		/* Metrics configuration */
 		jsvalidate: {
@@ -164,27 +168,24 @@ module.exports = function (grunt) {
 				basePath: './',
 				frameworks: ['mocha', 'requirejs', 'chai'],
 				files: [
-					'test-main.js',
-					{pattern: 'src/js/**/*.js', included: false},
-					{pattern: 'test/js/**/*.js', included: false},
-					{pattern: 'src/js/index.js', included: false}
-
+					'<%= testsConfiguration %>',
+					{pattern: '<%= scriptsStringApp %>', included: false},
+					{pattern: '<%= scriptsStringTests %>', included: false},
+					{pattern: '<%= scriptsStringIndex %>', included: false}
 				],
-				exclude: ['src/js/index.js'],
+				exclude: ['<%= scriptsStringIndex %>'],
 				junitReporter: {
 					outputFile: '<%=reportsDir%>/report-test-results.xml'
 				},
 				preprocessors: {
 				/*source files, that you wanna generate coverage for do not include tests or libraries (these files will be instrumented by Istanbul)*/
-					'src/js/app/**/*.js': ['coverage'],
-					'src/js/app/libs/*.js': ['coverage'],
-					'src/js/index.js': ['coverage']
+					'<%= scriptsStringApp %>': ['coverage'],
 					// 'src/js/index.js': ['coverage']
-					// 'src/js/app/vanilla/*.js': ['coverage']
+					// 'src/js/index.js': ['coverage']
 				},
 				coverageReporter: {
 					type : ['html'],
-					dir : '<%=reportsDir%>/test-coverage/cob/'
+					dir : '<%=reportsDir%>/test-coverage/'
 				}
 			},
 			unit: {
@@ -237,13 +238,12 @@ module.exports = function (grunt) {
 
 			options: {
 				debounceDelay: 200,
-//				atBegin: true,
 				livereload: true
 			},
 
 			// run unit tests with karma (server needs to be already running)
 			karma: {
-				files: ['src/js/**/*.js', 'test/js/**/*.js'],
+				files: ['<%= scriptsStringApp %>', '<%= scriptsStringIndex %>'],
 				tasks: ['karma:unit:run']
 			}
 		}
@@ -293,7 +293,6 @@ module.exports = function (grunt) {
 	]);
 
 	grunt.registerTask('_metrics:prod', 'run all possible metrics and generate reports', [
-		'sloc',
 		'jshint',
 		'csslint:prod',
 		'complexity',

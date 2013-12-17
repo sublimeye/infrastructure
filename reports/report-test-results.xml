@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="PhantomJS 1.9.2 (Windows 7)" package="undefined" timestamp="2013-12-04T12:40:13" id="0" hostname="NB-romo1" tests="11" errors="0" failures="1" time="0">
+  <testsuite name="PhantomJS 1.9.2 (Windows 7)" package="undefined" timestamp="2013-12-05T11:16:11" id="0" hostname="NB-romo1" tests="11" errors="0" failures="1" time="0">
     <properties>
       <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.2 Safari/534.34"/>
     </properties>
@@ -10,7 +10,7 @@
     at d:/web/infrastructure_9_karma/node_modules/karma-chai/node_modules/chai/chai.js:918
     at assertEqual (d:/web/infrastructure_9_karma/node_modules/karma-chai/node_modules/chai/chai.js:1322)
     at d:/web/infrastructure_9_karma/node_modules/karma-chai/node_modules/chai/chai.js:3522
-    at d:/web/infrastructure_9_karma/test/app/controller.test.js:16
+    at d:/web/infrastructure_9_karma/test/js/controller.test.js:16
     at d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4263
     at d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4635
     at d:/web/infrastructure_9_karma/node_modules/mocha/mocha.js:4694
@@ -29,7 +29,7 @@
     <testcase name="Gobo go" time="0" classname="PhantomJS 1.9.2 (Windows 7).Controller Sample Controller"/>
     <testcase name="Model should have a window" time="0" classname="PhantomJS 1.9.2 (Windows 7).App Model Test Suite Basic behavior"/>
     <testcase name="Model: 15 == 15" time="0" classname="PhantomJS 1.9.2 (Windows 7).App Model Test Suite Basic behavior"/>
-    <testcase name="Should have say method: " time="0.001" classname="PhantomJS 1.9.2 (Windows 7).Auth"/>
+    <testcase name="Should have say method: " time="0" classname="PhantomJS 1.9.2 (Windows 7).Auth"/>
     <system-out><![CDATA[
 ]]></system-out>
     <system-err/>

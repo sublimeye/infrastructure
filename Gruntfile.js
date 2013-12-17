@@ -3,34 +3,63 @@ module.exports = function (grunt) {
 	// Displays the elapsed execution time of grunt tasks when done
 	require('time-grunt')(grunt);
 
+	var paths = {
+		jshint: '.jshintrc',
+		csslint: '.csslintrc'
+	};
+
 	var config = {
 		pgk: grunt.file.readJSON('package.json'),
 
-		/* Sources / folder structure configuration */
+		/* BASE Folders */
 		srcDir: 'src',
-		compiledDir: 'dist',
-		reportsDir: 'reports',
+		compiledDir: 'build',
+		reportsDir: '<%= compiledDir %>/reports',
 		testsDir: 'test',
 
-		scriptsDir: 'src/js',
-		stylesDir: 'src/scss',
-		imagesDir: 'src/img',
-		fontsDir: 'src/fonts',
+		scriptsDir: '<%= srcDir %>/js',
+		stylesDir: '<%= srcDir %>/scss',
+		imagesDir: '<%= srcDir %>/img',
+		fontsDir: '<%= srcDir %>/fonts',
 
+		/* STYLES */
 		stylesCompiledDir: '<%=compiledDir%>/css',
 		scriptsCompiledDir: ['<%=compiledDir%>/js'],
-
 		styles: ['<%=stylesDir%>/**/*.*'],
 		stylesCompiled: [ '<%= stylesCompiledDir %>/*.css'],
 
-		userScripts: ['<%=scriptsDir%>/app/**/*.js', '<%=scriptsDir%>/index.js', '!<%=scriptsDir%>/vendor/**/*.js'],
-		scriptsCompiled: ['<%=compiledDir%>/**/*.js'],
+		/* SCRIPTS : JAVASCRIPT */
+
+		/* requirejs option "name". Should be equal to main module/init module of the app */
+		appIndexRequire: 'index',
+
+		indexScript: '<%=scriptsDir%>/index.js',
+		appScripts: '<%=scriptsDir%>/app/**/*.js',
+		userScripts: ['<%= appScripts %>', '<%= indexScript %>' , '!<%=scriptsDir%>/vendor/**/*.js'],
+		testScripts: '<%= testsDir %>/js/**/*.js',
+
+		compiledIndexScript: '<%=scriptsCompiledDir%>/index.min.js',
 
 		scriptsStringApp: '<%=scriptsDir%>/app/**/*.js',
 		scriptsStringIndex: '<%=scriptsDir%>/index.js',
-		scriptsStringTests: 'test/app/**/*.js',
+		scriptsStringTests: '<%= testsDir %>/js/**/*.js',
 
-		testsConfiguration: 'test/config.js',
+		/* REPORT FILES */
+		reports: {
+			plato: '<%= reportsDir %>/plato',
+			coverage: '<%= reportsDir %>/test-coverage/',
+			jshint: '<%= reportsDir %>/report-jshint.xml',
+			csslint: '<%= reportsDir %>/report-csslint.xml',
+			complexity: '<%= reportsDir %>/report-complexity.xml',
+			testing: '<%= reportsDir %>/report-test-results.xml'
+		},
+
+		configs: {
+			jshintrc: paths.jslint,
+			csslintrc: paths.csslint,
+			requirejs: '<%=scriptsDir%>/require.conf.js',
+			testing: '<%= testsDir %>/config.js'
+		},
 
 		/* Metrics configuration */
 		jsvalidate: {
@@ -41,7 +70,7 @@ module.exports = function (grunt) {
 			},
 			targetName: {
 				files: {
-					src: ['<%= userScripts %>']
+					src: '<%= userScripts %>'
 				}
 			}
 		},
@@ -51,25 +80,25 @@ module.exports = function (grunt) {
 			},
 			options: {
 				force: true,
-				jshintrc: '.jshintrc',
+				jshintrc: '<%= configs.jshintrc %>',
 				reporter: require('jshint-jenkins-checkstyle-reporter'),
-				reporterOutput: '<%=reportsDir%>/report-jshint.xml'
+				reporterOutput: '<%= reports.jshint %>'
 			}
 		},
 		csslint: {
 			prod: {
 				src: '<%= stylesCompiled %>',
 				options: {
-					csslintrc: '.csslintrc',
+					csslintrc: '<%= configs.csslintrc %>',
 					formatters: [
-					{id: 'lint-xml', dest: '<%=reportsDir%>/report-csslint.xml'}
+					{id: 'lint-xml', dest: '<%= reports.csslint %>'}
 				]
 				}
 			},
 			dev: {
 				src: '<%= stylesCompiled %>',
 				options: {
-					csslintrc: '.csslintrc'
+					csslintrc: '<%= configs.csslintrc %>'
 				}
 			}
 		},
@@ -77,7 +106,7 @@ module.exports = function (grunt) {
 			generic: {
 				src: '<%=userScripts%>',
 				options: {
-					jsLintXML: '<%=reportsDir%>/report-complexity.xml', // create XML JSLint-like report
+					jsLintXML: '<%= reports.complexity %>', // create XML JSLint-like report
 					checkstyleXML: false, //'checkstyle.xml', // create checkstyle report
 					errorsOnly: false, // show only maintainability errors
 					cyclomatic: 11,
@@ -88,11 +117,11 @@ module.exports = function (grunt) {
 		},
 		plato: {
 			options: {
-				jshint: grunt.file.readJSON('.jshintrc')
+				jshint: grunt.file.readJSON( paths.jshint )
 			},
 			metrix: {
 				files: {
-					'reports/plato': '<%= userScripts %>'
+					'<%= reports.plato %>': '<%= userScripts %>'
 				}
 			}
 		},
@@ -124,11 +153,11 @@ module.exports = function (grunt) {
 			prod: {
 				options: {
 					optimizeCss: 'none',
-					mainConfigFile: "<%=scriptsDir%>/require.conf.js",
+					mainConfigFile: '<%= configs.requirejs %>',
 
-					name: 'index',
+					name: '<%= appIndexRequire %>',
 					baseUrl: '<%=scriptsDir%>',
-					out: "<%=scriptsCompiledDir%>/index.min.js",
+					out: '<%= compiledIndexScript %>',
 					optimize: 'uglify2',
 
 					//The directory path to save the output. If not specified, then
@@ -168,24 +197,26 @@ module.exports = function (grunt) {
 				basePath: './',
 				frameworks: ['mocha', 'requirejs', 'chai'],
 				files: [
-					'<%= testsConfiguration %>',
-					{pattern: '<%= scriptsStringApp %>', included: false},
-					{pattern: '<%= scriptsStringTests %>', included: false},
-					{pattern: '<%= scriptsStringIndex %>', included: false}
+					'<%= configs.testing %>',
+					{pattern: '<%= indexScript %>', included: false},
+					{pattern: '<%= appScripts %>', included: false},
+					{pattern: '<%= testScripts %>', included: false}
+
 				],
-				exclude: ['<%= scriptsStringIndex %>'],
+				exclude: ['<%= indexScript %>'],
 				junitReporter: {
-					outputFile: '<%=reportsDir%>/report-test-results.xml'
+					outputFile: '<%= reports.testing %>'
 				},
 				preprocessors: {
 				/*source files, that you wanna generate coverage for do not include tests or libraries (these files will be instrumented by Istanbul)*/
-					'<%= scriptsStringApp %>': ['coverage'],
+					'<%= appScripts %>': ['coverage'],
 					// 'src/js/index.js': ['coverage']
 					// 'src/js/index.js': ['coverage']
+					// 'src/js/app/vanilla/*.js': ['coverage']
 				},
 				coverageReporter: {
 					type : ['html'],
-					dir : '<%=reportsDir%>/test-coverage/'
+					dir : '<%= reports.coverage %>'
 				}
 			},
 			unit: {
@@ -243,7 +274,7 @@ module.exports = function (grunt) {
 
 			// run unit tests with karma (server needs to be already running)
 			karma: {
-				files: ['<%= scriptsStringApp %>', '<%= scriptsStringIndex %>'],
+				files: ['<%= appScripts %>', '<%= testScripts %>'],
 				tasks: ['karma:unit:run']
 			}
 		}

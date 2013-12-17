@@ -13,6 +13,7 @@ define(function (require) {
 
 			 it('ENTER_KEY should be equal 13', function () {
 				 c.ENTER_KEY.should.equal(13);
+				 c.ENTER_KEY.should.equal(14);
 			 });
 
 			 it('ESCAPE_KEY should be equal 27', function () {
@@ -37,6 +38,7 @@ define(function (require) {
 
 			 it('Gobo go', function () {
 				assert('love' !== 'hate', 'What?');
+				assert('love' === 'love', 'What?');
 			 });
 
 

@@ -29,6 +29,8 @@
     <property name="dir.unittest" value="${project.basedir}/app"/>
 
     <property name="dir.clientsrc" value="${project.basedir}/src/js/app"/>
+    <property name="dir.clientreports" value="${project.basedir}/src/js/app"/>
+
 
     <!--  What should be deployed  -->
     <fileset id="deploy" dir="${project.basedir}">

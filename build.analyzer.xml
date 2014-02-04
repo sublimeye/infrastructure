@@ -29,7 +29,7 @@
     <!-- Javascript jshint -->
     <target name="analyzer:client-jshint" description="Checks javascript coding standard.">
         <echo msg="Checking javascript coding standard ..."/>
-        <exec passthru="true" command="jshint ${dir.clientsrc} --jslint-reporter &gt; ${dir.reports}/jshint.xml"/>
+        <exec passthru="true" command="jshint ${dir.clientsrc} --checkstyle-reporter &gt; ${dir.reports}/jshint.xml"/>
     </target>
 
     <!-- Javascript Plato analyzer -->

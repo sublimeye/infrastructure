@@ -35,7 +35,7 @@
     <!-- Javascript Plato analyzer -->
     <target name="analyzer:client-plato" description="Plato metrics tool.">
         <echo msg="Producing plato reports ..."/>
-        <exec passthru="true" command="plato -r -d ${dir.dir.clientreports} ${dir.clientsrc}"/>
+        <exec passthru="true" command="plato -r -d ${dir.clientreports} ${dir.clientsrc}"/>
     </target>
 
 </project>

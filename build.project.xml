@@ -29,7 +29,7 @@
     <property name="dir.unittest" value="${project.basedir}/app"/>
 
     <property name="dir.clientsrc" value="${project.basedir}/src/js/app"/>
-    <property name="dir.clientreports" value="${project.basedir}/src/js/app"/>
+    <property name="dir.clientreports" value="${project.basedir}/client-reports"/>
 
 
     <!--  What should be deployed  -->

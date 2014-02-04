@@ -269,7 +269,8 @@ module.exports = function (grunt) {
 
 			options: {
 				debounceDelay: 200,
-				livereload: true
+				livereload: true,
+				spawn: false
 			},
 
 			// run unit tests with karma (server needs to be already running)

@@ -9,11 +9,12 @@ define(function (require) {
 			it('Should have property model and view', function () {
 				should.exist(c.model);
 				should.exist(c.view);
+        
 			});
 
 			 it('ENTER_KEY should be equal 13', function () {
 				 c.ENTER_KEY.should.equal(13);
-				 c.ENTER_KEY.should.equal(14);
+				 // c.ENTER_KEY.should.equal(14);
 			 });
 
 			 it('ESCAPE_KEY should be equal 27', function () {

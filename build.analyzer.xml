@@ -6,7 +6,7 @@
     <property name="dir.reports.clover" value="${dir.reports}"/>
 
     <target name="analyzer:run"
-            depends="analyzer:clean, analyzer:prepare, analyzer:jshint, analyzer:csslint, analyzer:jscheckstyle"
+            depends="analyzer:clean, analyzer:prepare, analyzer:jshint"
             description="Run all test and build everything"/>
 
     <!--  Cleanup before build  -->
@@ -29,19 +29,14 @@
     <!-- Javascript jshint -->
     <target name="analyzer:jshint" description="Checks javascript coding standard.">
         <echo msg="Checking javascript coding standard ..."/>
-        <exec passthru="true" command="jshint ${dir.src} --jslint-reporter &gt; ${dir.reports}/jshint.xml"/>
+        <exec passthru="true" command="jshint ${dir.clientsrc} --jslint-reporter &gt; ${dir.reports}/jshint.xml"/>
     </target>
 
-    <!-- Javascript jshint -->
-    <target name="analyzer:jscheckstyle" description="Checks javascript coding standard - checkstyle format.">
-        <echo msg="Checking javascript coding standard, checkstyle format ..."/>
-        <exec passthru="true" command="jshint ${dir.src} --checkstyle-reporter &gt; ${dir.reports}/jscheckstyle.xml"/>
-    </target>
 
     <!-- Javascript jshint -->
-    <target name="analyzer:csslint" description="CSS Lint">
+<!--     <target name="analyzer:csslint" description="CSS Lint">
         <echo msg="Running CSS Lint"/>
         <exec passthru="true" command="csslint --format=lint-xml ${dir.src} &gt; ${dir.reports}/csslint.xml"/>
     </target>
-
+ -->
 </project>

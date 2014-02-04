@@ -32,11 +32,4 @@
         <exec passthru="true" command="jshint ${dir.clientsrc} --jslint-reporter &gt; ${dir.reports}/jshint.xml"/>
     </target>
 
-
-    <!-- Javascript jshint -->
-<!--     <target name="analyzer:csslint" description="CSS Lint">
-        <echo msg="Running CSS Lint"/>
-        <exec passthru="true" command="csslint --format=lint-xml ${dir.src} &gt; ${dir.reports}/csslint.xml"/>
-    </target>
- -->
 </project>

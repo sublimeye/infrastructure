@@ -6,7 +6,7 @@
     <property name="dir.reports.clover" value="${dir.reports}"/>
 
     <target name="analyzer:run"
-            depends="analyzer:clean, analyzer:prepare, analyzer:jshint"
+            depends="analyzer:clean, analyzer:prepare, analyzer:client-jshint, analyzer:client-plato"
             description="Run all test and build everything"/>
 
     <!--  Cleanup before build  -->
@@ -27,9 +27,15 @@
     </target>
 
     <!-- Javascript jshint -->
-    <target name="analyzer:jshint" description="Checks javascript coding standard.">
+    <target name="analyzer:client-jshint" description="Checks javascript coding standard.">
         <echo msg="Checking javascript coding standard ..."/>
         <exec passthru="true" command="jshint ${dir.clientsrc} --jslint-reporter &gt; ${dir.reports}/jshint.xml"/>
+    </target>
+
+    <!-- Javascript Plato analyzer -->
+    <target name="analyzer:client-plato" description="Plato metrics tool.">
+        <echo msg="Producing plato reports ..."/>
+        <exec passthru="true" command="plato -r -d ${dir.client-reports} ${dir.clientsrc}"/>
     </target>
 
 </project>
